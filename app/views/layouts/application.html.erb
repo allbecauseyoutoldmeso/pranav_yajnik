@@ -6,9 +6,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
 
   <body>
+    <header>
+      <%= link_to 'about pranav', about_pranav_path, html_options = {} %>
+       | <%= link_to 'about kathak', about_kathak_path, html_options = {} %>
+       | <%= link_to 'gallery', gallery_path, html_options = {} %>
+       | <%= link_to 'contact', contact_path, html_options = {} %>
+    </header>
     <%= yield %>
   </body>
 </html>
