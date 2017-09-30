@@ -25,12 +25,23 @@ footer {
   bottom: 0px
 }
 
+img {
+  display: block;
+  margin: auto;
+}
+
 #about-pranav-image {
   height: 400px;
-  width: auto;
 }
 
 #about-kathak-image {
   height: 400px;
-  width: auto;
+}
+
+#home-image {
+  height: 400px;
+}
+
+#contact-image {
+  height: 400px;
 }
