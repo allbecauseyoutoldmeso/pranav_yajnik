@@ -11,10 +11,11 @@
 
   <body>
     <header>
-      <%= link_to 'about pranav', about_pranav_path, html_options = {} %>
-       | <%= link_to 'about kathak', about_kathak_path, html_options = {} %>
-       | <%= link_to 'gallery', gallery_path, html_options = {} %>
-       | <%= link_to 'contact', contact_path, html_options = {} %>
+      <%= link_to 'home', home_index_path %>
+       | <%= link_to 'about pranav', about_pranav_path %>
+       | <%= link_to 'about kathak', about_kathak_path %>
+       | <%= link_to 'gallery', gallery_path %>
+       | <%= link_to 'contact', contact_path %>
     </header>
     <%= yield %>
   </body>
