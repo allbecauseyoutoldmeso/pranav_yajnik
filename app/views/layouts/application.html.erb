@@ -11,12 +11,18 @@
 
   <body>
     <header>
-      <%= link_to 'home', home_index_path %>
-       | <%= link_to 'about pranav', about_pranav_path %>
-       | <%= link_to 'about kathak', about_kathak_path %>
-       | <%= link_to 'gallery', gallery_path %>
-       | <%= link_to 'contact', contact_path %>
+      <p id='page-links'>
+        <%= link_to 'home', root_path %>
+         | <%= link_to 'about pranav', about_pranav_path %>
+         | <%= link_to 'about kathak', about_kathak_path %>
+         | <%= link_to 'gallery', gallery_path %>
+         | <%= link_to 'contact', contact_path %>
+      </p>
+      <p id='logo'>pranav yajnik</p>    
     </header>
     <%= yield %>
+    <footer>
+      © 2017-2018 Pranav Yajnik. All rights reserved.
+    </footer>
   </body>
 </html>
