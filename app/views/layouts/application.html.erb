@@ -3,26 +3,40 @@
   <head>
     <title>PranavYajnik</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
 
   <body>
-    <header>
-      <p id='page-links'>
-        <%= link_to 'home', root_path %>
-         | <%= link_to 'about pranav', about_pranav_path %>
-         | <%= link_to 'about kathak', about_kathak_path %>
-         | <%= link_to 'gallery', gallery_path %>
-         | <%= link_to 'contact', contact_path %>
-      </p>
-      <p id='logo'>pranav yajnik</p>    
-    </header>
-    <%= yield %>
-    <footer>
-      © 2017-2018 Pranav Yajnik. All rights reserved.
-    </footer>
+    <div class="container">
+      <div class = "header">
+        <div class="row align-items-start">
+          <div id='logo' class="col-4">
+            pranav yajnik
+          </div>
+          <div class="col">
+            <%= link_to 'home', root_path %>
+          </div>
+          <div class="col">
+            <%= link_to 'about pranav', about_pranav_path %>
+          </div>
+          <div class="col">
+            <%= link_to 'about kathak', about_kathak_path %>
+          </div>
+          <div class="col">
+            <%= link_to 'gallery', gallery_path %>
+          </div>
+          <div class="col">
+            <%= link_to 'contact', contact_path %>
+          </div>
+        </div>
+      </div>
+      <%= yield %>
+      <div class="fixed-bottom">
+        © 2017-2018 Pranav Yajnik. All rights reserved.
+      </div>
+    </div>
   </body>
 </html>
