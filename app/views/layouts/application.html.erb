@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>PranavYajnik</title>
+
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js' integrity='sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1' crossorigin='anonymous'></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ' crossorigin='anonymous'>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+
   </head>
 
   <body>
-    <div class="container">
-      <div class = "header">
-        <div class="row align-items-start">
-          <div id='logo' class="col-4">
-            pranav yajnik
-          </div>
-          <div class="col">
-            <%= link_to 'home', root_path %>
-          </div>
-          <div class="col">
-            <%= link_to 'about pranav', about_pranav_path %>
-          </div>
-          <div class="col">
-            <%= link_to 'gallery', gallery_path %>
-          </div>
-          <div class="col">
-            <%= link_to 'lessons', gallery_path %>
-          </div>
-          <div class="col">
-            <%= link_to 'contact', contact_path %>
-          </div>
+
+    <div class='container'>
+
+      <nav class='navbar navbar-toggleable-md fixed-top'>
+
+        <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+          <img id='menu_icon' src='menu_2.png'>
+        </button>
+
+        <a class='navbar-brand' href='/'>pranav yajnik</a>
+
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul class='navbar-nav ml-auto'>
+            <li class='nav-item'>
+              <a class='nav-link' href='/'>home</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='/about_pranav'>about pranav</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='/gallery'>gallery</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='/lessons'>lessons</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='/contact'>contact</a>
+            </li>
+
+          </ul>
         </div>
-      </div>
+      </nav>
+
       <%= yield %>
-      <div class="fixed-bottom">
-        © 2017-2018 Pranav Yajnik. All rights reserved.
+
+      <div class='fixed-bottom d-flex justify-content-end' id='footer'>
+        <span class='mr-auto'>© Pranav Yajnik. All rights reserved.</span>
+        <span><a href='https://www.facebook.com' target='_blank'><img src='social_media/facebook.png' class='img-fluid icon'></a></span>
+        <span><a href='https://www.twitter.com' target='_blank'><img src='social_media/twitter.png' class='img-fluid icon'></a></span>
+        <span><a href='mailto:pranav@yahoo.co.uk?Subject=Kathak%20lessons' target='_blank'><img src='social_media/email.png' class='img-fluid icon'></a></span>
       </div>
+
     </div>
   </body>
 </html>
