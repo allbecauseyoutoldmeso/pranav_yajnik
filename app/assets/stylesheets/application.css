@@ -23,7 +23,7 @@ img {
 #about_pranav_text {
   text-align: justify;
   text-justify: inter-word;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .navbar-toggler {
