@@ -1,29 +1,44 @@
+/*general*/
+
 body {
   background-color: black;
   color: white;
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 100px
 }
 
 img {
   display: block;
-  margin: auto;
 }
 
-#about_pranav_image {
-  max-width: 100%;
-  height: auto;
-  margin-left: 0px;
-  margin-right: 0px;
-  border-radius: 10px
+a:hover {
+  color: #F86B42;
+  text-decoration: none
 }
 
-#about_pranav_text {
-  text-align: justify;
-  text-justify: inter-word;
-  max-width: 100%;
+button:focus {
+  outline: none
+}
+
+/*navbar*/
+
+.navbar {
+  border-bottom: 3px solid #F86B42;
+  background-color: black
+}
+
+.navbar-brand {
+  font-size: 35px;
+  color: white
+}
+
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
 }
 
 .navbar-toggler {
@@ -35,26 +50,38 @@ img {
   height: auto
 }
 
-.navbar-brand {
-  font-size: 35px;
-  color: white
-}
-
-.navbar {
-  border-bottom: 3px solid #F86B42;
-  background-color: black
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  font-size: 25px;
-}
+/*footer*/
 
 #footer {
   background-color: #F86B42;
   padding: 15px
 }
+
+.icon {
+  max-height: 35px;
+  padding-left: 15px;
+  padding-right: 15px
+}
+
+/*about_pranav*/
+
+#about_pranav_image {
+  margin-top: 30px;
+  max-width: 100%;
+  height: auto;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 10px
+}
+
+#about_pranav_text {
+  margin-top: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 100%;
+}
+
+/*gallery*/
 
 .gallery_image {
   max-width: 55%;
@@ -64,43 +91,16 @@ img {
   margin: 100px;
 }
 
-.icon {
-  max-height: 35px;
-  padding-left: 15px;
-  padding-right: 15px
-}
-
-.contact {
-  max-height: 40px;
-  padding-right: 30px
-}
-
-a:hover {
-  color: #F86B42;
-  text-decoration: none
-}
-
-.contact_text {
-  color: white
-}
-
-#contact-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px
-}
-
-button:focus {
-  outline: none
-}
+/*lessons*/
 
 #lessons_image {
+  margin-top: 50px;
   max-width: 55%;
   height: auto;
 }
 
 .class_info {
-  padding-top: 30px
+  margin-top: 50px
 }
 
 .class_level {
@@ -109,6 +109,24 @@ button:focus {
   text-decoration-color: #F86B42
 }
 
-.col-sm {
-  margin: 100px
+/*contact*/
+
+.contact {
+  max-height: 40px;
+  padding-right: 30px
+}
+
+.contact_text {
+  color: white
+}
+
+.contacts {
+  margin-top: 100px
+}
+
+#contact-image {
+  margin-top: 50px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px
 }
