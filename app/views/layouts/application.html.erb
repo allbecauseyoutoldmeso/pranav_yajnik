@@ -24,12 +24,13 @@
 
   <body>
 
-    <div class='container'>
+    <div class='row admin_links container-fluid'>
+      <div class='col-sm-2'><%= button_to 'add photos', new_photo_path, :class => 'admin_button', :method => :get %></div>
+      <div class='col-sm-2'><%= button_to 'all photos', photos_path, :class => 'admin_button', :method => :get %></div>
+      <div class='col-sm-2'><%= button_to 'public pages', root_path, :class => 'admin_button', :method => :get %></div>
+    </div>
 
-      <div class='row'>
-        <div class='col-sm-2'><%= button_to 'add photos', new_photo_path, :class => 'admin_button', :method => :get %></div>
-        <div class='col-sm-2'><%= button_to 'all photos', photos_path, :class => 'admin_button', :method => :get %></div>
-      </div>
+    <div class='container'>
 
       <nav class='navbar navbar-toggleable-md fixed-top'>
 

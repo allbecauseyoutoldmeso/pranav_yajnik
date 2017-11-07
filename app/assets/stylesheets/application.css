@@ -139,7 +139,8 @@ button:focus {
 
 .photo {
   max-width: 100%;
-  height: auto
+  height: auto;
+  margin: 10px
 }
 
 .photo_row {
@@ -152,4 +153,14 @@ button:focus {
   border: 2px solid white;
   font-family: 'Raleway', sans-serif;
   border-radius: 10px
+}
+
+.admin_links {
+  background-color: white;
+  border-radius: 10px;
+  opacity: 0.9
+}
+
+.photo_form {
+  margin: 50px
 }
