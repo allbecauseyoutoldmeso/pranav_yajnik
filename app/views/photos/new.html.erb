@@ -1,7 +1,11 @@
+<% content_for :stylesheets do %>
+  .navbar {display: none}
+<% end %>
+
 <%= form_for @photo do |f| %>
 
   <% if @photo.errors.any? %>
-    <% object.errors.full_messages.each do |msg| %>
+    <% @photo.errors.full_messages.each do |msg| %>
       <%= msg %>
     <% end %>
   <% end %>
@@ -16,5 +20,5 @@
     <%= f.file_field :image, class: 'form-control'%>
   </div>
 
-  <%= f.submit 'Upload', class: 'btn btn-primary' %>
+  <%= f.submit 'Upload', class: 'btn btn-primary admin_button' %>
 <% end %>

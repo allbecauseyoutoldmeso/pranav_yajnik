@@ -1,13 +1,19 @@
+<% content_for :stylesheets do %>
+  .navbar {display: none}
+<% end %>
+
 <% @photos.each do |photo| %>
 
-  <div class='row'>
+  <div class='row photo_row'>
 
     <div class='col-sm-6'>
     <%= link_to image_tag(photo.image.url, :class => 'photo mx-auto'), photo.image.url, target: '_blank' %>
     </div>
-    <div class='col-sm-6'>
+    <div class='col-sm-3'>
       <%= photo.caption %>
+      <%= button_to 'delete', "/photos/#{photo.id}", method: :delete, :class => 'admin_button' %>
     </div>
-    
+    <div class='col-sm-3'>
+    </div>
   </div>
 <% end %>

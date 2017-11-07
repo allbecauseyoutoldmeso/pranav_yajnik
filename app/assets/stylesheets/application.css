@@ -18,6 +18,10 @@ a:hover {
   text-decoration: none
 }
 
+a {
+  color: white
+}
+
 button:focus {
   outline: none
 }
@@ -136,4 +140,16 @@ button:focus {
 .photo {
   max-width: 100%;
   height: auto
+}
+
+.photo_row {
+  margin: 50px
+}
+
+.admin_button {
+  background-color: #F86B42;
+  color: white;
+  border: 2px solid white;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 10px
 }

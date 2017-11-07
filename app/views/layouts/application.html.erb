@@ -18,11 +18,18 @@
 
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 
+    <style><%= yield :stylesheets %></style>
+
   </head>
 
   <body>
 
     <div class='container'>
+
+      <div class='row'>
+        <div class='col-sm-2'><%= button_to 'add photos', new_photo_path, :class => 'admin_button', :method => :get %></div>
+        <div class='col-sm-2'><%= button_to 'all photos', photos_path, :class => 'admin_button', :method => :get %></div>
+      </div>
 
       <nav class='navbar navbar-toggleable-md fixed-top'>
 
