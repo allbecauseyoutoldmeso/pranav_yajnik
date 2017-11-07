@@ -130,3 +130,10 @@ button:focus {
   height: auto;
   border-radius: 10px
 }
+
+/*admin*/
+
+.photo {
+  max-width: 100%;
+  height: auto
+}

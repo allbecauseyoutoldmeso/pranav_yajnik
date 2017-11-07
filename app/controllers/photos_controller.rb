@@ -1,4 +1,4 @@
-class PhotosController < ActionController::Base
+class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
@@ -11,8 +11,7 @@ class PhotosController < ActionController::Base
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      flash[:notice] = 'Photo successfully added'
-      redirect_to index
+      redirect_to photos_path
     else
       render 'new'
     end
@@ -21,6 +20,6 @@ class PhotosController < ActionController::Base
   private
 
   def photo_params
-    params.permit(:photo, :caption, :image)
+    params.require(:photo).permit(:image, :caption)
   end
 end
