@@ -155,10 +155,17 @@ button:focus {
   border-radius: 10px
 }
 
+.admin_button:hover {
+  background-color: #F86B42;
+  color: white;
+  border: 2px solid white;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 10px
+}
+
 .admin_links {
-  background-color: white;
+  background-color: #F86B42;
   border-radius: 10px;
-  opacity: 0.9
 }
 
 .photo_form {

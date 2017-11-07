@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   end
 
   def gallery
+    @photos = Photo.order(created_at: :desc)
   end
 
   def contact
