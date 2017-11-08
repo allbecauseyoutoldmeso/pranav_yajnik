@@ -14,15 +14,15 @@
     <% end %>
 
     <div class='form-group'>
-      <%= f.label :caption %>
+      <%= f.label :caption, 'caption' %>
       <%= f.text_field :caption, class: 'form-control' %>
     </div>
 
     <div class='form-group'>
-      <%= f.label :image %>
-      <%= f.file_field :image, class: 'form-control'%>
+      <%= f.label :image, 'image' %>
+      <%= f.file_field :image, class: 'form-control' %>
     </div>
 
-    <%= f.submit 'Upload', class: 'btn btn-primary admin_button' %>
+    <%= f.submit 'upload', class: 'btn btn-primary admin_button' %>
   <% end %>
 </div>

@@ -24,13 +24,17 @@
 
   <body>
 
-    <div class='row admin_links container-fluid'>
-      <div class='col-sm-2 admin'>admin: </div>
-      <div class='col-sm-2'><%= button_to 'add photos', new_photo_path, :class => 'admin_button', :method => :get %></div>
-      <div class='col-sm-2'><%= button_to 'all photos', photos_path, :class => 'admin_button', :method => :get %></div>
-      <div class='col-sm-2'><%= button_to 'public pages', root_path, :class => 'admin_button', :method => :get %></div>
-      <div class='col-sm-2'><%= button_to 'log out admin', '', :class => 'admin_button', :method => :post %></div>
-    </div>
+    <% if admin_signed_in? %>
+
+      <div class='row admin_links container-fluid'>
+        <div class='col-sm-2 admin_label'>admin: </div>
+        <div class='col-sm-2'><%= button_to 'add photo', new_photo_path, :class => 'admin_button', :method => :get %></div>
+        <div class='col-sm-2'><%= button_to 'edit photos', photos_path, :class => 'admin_button', :method => :get %></div>
+        <div class='col-sm-2'><%= button_to 'public pages', root_path, :class => 'admin_button', :method => :get %></div>
+        <div class='col-sm-2'><%= button_to 'log out admin', destroy_admin_session_path, :class => 'admin_button', :method => :delete %></div>
+      </div>
+
+    <% end %>
 
     <div class='container'>
 

@@ -26,6 +26,10 @@ button:focus {
   outline: none
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 /*navbar*/
 
 .navbar {
@@ -164,7 +168,7 @@ button:focus {
 }
 
 .admin_links {
-  background-color: #F86B42;
+  background-color: gray;
   border-radius: 10px;
 }
 
@@ -172,6 +176,16 @@ button:focus {
   margin: 50px
 }
 
-.admin {
+.admin_label {
   font-size: 20px
+}
+
+.sign_in_form {
+  margin: 30px
+}
+
+.sign_in_input {
+  border-radius: 5px;
+  border: none;
+  width: 300px
 }
