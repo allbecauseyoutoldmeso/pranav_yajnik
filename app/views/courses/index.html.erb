@@ -1,0 +1,16 @@
+<% content_for :stylesheets do %>
+  .navbar {display: none}
+  body { padding-top: 0px;}
+<% end %>
+
+<% @courses.each do |course| %>
+
+  <%= course.what %>
+  <%= course.where %>
+  <%= course.day %>
+  <%= course.time %>
+  <%= course.freetext %>
+
+  <%= button_to 'delete', "/courses/#{course.id}", method: :delete, :class => 'admin_button' %>
+
+<% end %>

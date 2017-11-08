@@ -7,6 +7,6 @@ class CreatePhotos < ActiveRecord::Migration[5.1]
   end
 
   def down
-    delete_table :photos
+    drop_table :photos
   end
 end

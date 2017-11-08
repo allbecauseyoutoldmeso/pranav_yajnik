@@ -1,0 +1,41 @@
+<% content_for :stylesheets do %>
+  .navbar {display: none}
+  body { padding-top: 0px;}
+<% end %>
+
+<%= form_for @course do |f| %>
+
+  <% if @course.errors.any? %>
+    <% @course.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  <% end %>
+
+  <div class='form-group'>
+    <%= f.label :what, 'what' %>
+    <%= f.text_field :what, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :where, 'where' %>
+    <%= f.text_field :where, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :freetext, 'free text' %>
+    <%= f.text_field :freetext, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :day, 'day' %>
+    <%= f.select :day, ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'], prompt:'select' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :time, 'time' %>
+    <%= f.time_field :time, class: 'form-control' %>
+  </div>
+
+
+  <%= f.submit 'save', class: 'btn btn-primary admin_button' %>
+<% end %>
