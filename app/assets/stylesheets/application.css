@@ -71,6 +71,12 @@ textarea:focus, input:focus{
   padding-right: 15px
 }
 
+/*home*/
+
+.mobile_home_image {
+  margin-top: 50px
+}
+
 /*about_pranav*/
 
 #about_pranav_image {
