@@ -23,20 +23,7 @@
   </head>
 
   <body>
-
-    <% if admin_signed_in? %>
-
-      <div class='row admin_links container-fluid'>
-        <div class='col-sm-2'><%= button_to 'add photo', new_photo_path, :class => 'admin_button', :method => :get %></div>
-        <div class='col-sm-2'><%= button_to 'edit photos', photos_path, :class => 'admin_button', :method => :get %></div>
-        <div class='col-sm-2'><%= button_to 'add lesson', new_course_path, :class => 'admin_button', :method => :get %></div>
-        <div class='col-sm-2'><%= button_to 'edit lessons', courses_path, :class => 'admin_button', :method => :get %></div>
-        <div class='col-sm-2'><%= button_to 'public pages', root_path, :class => 'admin_button', :method => :get %></div>
-        <div class='col-sm-2'><%= button_to 'log out admin', destroy_admin_session_path, :class => 'admin_button', :method => :delete %></div>
-      </div>
-
-    <% end %>
-
+  
     <div class='container'>
 
       <nav class='navbar navbar-toggleable-md fixed-top'>
@@ -68,6 +55,20 @@
           </ul>
         </div>
       </nav>
+
+      <% if admin_signed_in? %>
+
+        <div class='row admin_links container-fluid fixed-top'>
+          <div class='col-sm-2'><%= button_to 'add photo', new_photo_path, :class => 'admin_button', :method => :get %></div>
+          <div class='col-sm-2'><%= button_to 'edit photos', photos_path, :class => 'admin_button', :method => :get %></div>
+          <div class='col-sm-2'><%= button_to 'add lesson', new_lesson_path, :class => 'admin_button', :method => :get %></div>
+          <div class='col-sm-2'><%= button_to 'edit lessons', lessons_path, :class => 'admin_button', :method => :get %></div>
+          <div class='col-sm-2'><%= button_to 'public pages', root_path, :class => 'admin_button', :method => :get %></div>
+          <div class='col-sm-2'><%= button_to 'log out admin', destroy_admin_session_path, :class => 'admin_button', :method => :delete %></div>
+        </div>
+
+      <% end %>
+
 
       <%= yield %>
 

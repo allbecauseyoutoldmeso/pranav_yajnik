@@ -12,8 +12,4 @@ class HomeController < ApplicationController
 
   def contact
   end
-
-  def lessons
-  end
-
 end

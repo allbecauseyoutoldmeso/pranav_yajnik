@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20171108215331) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "courses", force: :cascade do |t|
+  create_table "lessons", force: :cascade do |t|
     t.string "what"
     t.string "where"
-    t.string "day"
+    t.integer "day"
     t.time "time"
     t.text "freetext"
     t.datetime "created_at", null: false

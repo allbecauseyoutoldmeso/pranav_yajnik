@@ -1,9 +1,9 @@
-class CreateCourses < ActiveRecord::Migration[5.1]
+class CreateLessons < ActiveRecord::Migration[5.1]
   def up
-    create_table :courses do |t|
+    create_table :lessons do |t|
       t.string :what
       t.string :where
-      t.string :day
+      t.integer :day
       t.time :time
       t.text :freetext
       t.timestamps
@@ -11,6 +11,6 @@ class CreateCourses < ActiveRecord::Migration[5.1]
   end
 
   def down
-    drop_table :courses
+    drop_table :lessons
   end
 end

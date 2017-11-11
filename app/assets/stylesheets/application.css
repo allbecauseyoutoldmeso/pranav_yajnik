@@ -176,6 +176,7 @@ textarea:focus, input:focus{
 .admin_links {
   background-color: gray;
   border-radius: 10px;
+  margin-top: 80px
 }
 
 .photo_form {

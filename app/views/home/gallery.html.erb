@@ -1,3 +1,6 @@
 <% @photos.each do |photo| %>
   <%= link_to image_tag(photo.image.url, :class => 'gallery_image mx-auto'), photo.image.url, target: '_blank' %>
+  <% if admin_signed_in? %>
+    <%= button_to 'delete', "/photos/#{photo.id}", method: :delete, :class => 'admin_button' %>
+  <% end %>
 <% end %>
