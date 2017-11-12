@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def gallery
-    @photos = Photo.order(created_at: :desc)
+    @gallery_items = (Photo.all + Video.all).sort_by(&:created_at)
   end
 
   def contact

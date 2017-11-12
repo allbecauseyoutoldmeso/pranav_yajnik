@@ -108,6 +108,13 @@ textarea:focus, input:focus{
   margin: 100px;
 }
 
+.gallery_video {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #F86B42;
+  border-radius: 10px;
+}
+
 /*lessons*/
 
 #lessons_image {

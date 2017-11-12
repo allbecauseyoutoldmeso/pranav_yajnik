@@ -56,11 +56,11 @@
 
       <% if admin_signed_in? %>
 
-        <div class='row admin_links container-fluid fixed-top'>      
+        <div class='row admin_links container-fluid fixed-top'>
           <div class='col-sm-2'><%= button_to 'add photo', new_photo_path, :class => 'admin_button', :method => :get %></div>
+          <div class='col-sm-2'><%= button_to 'add video', new_video_path, :class => 'admin_button', :method => :get %></div>
           <div class='col-sm-2'><%= button_to 'add lesson', new_lesson_path, :class => 'admin_button', :method => :get %></div>
           <div class='col-sm-2'><%= button_to 'edit pranav', edit_pranav_path(1), :class => 'admin_button', :method => :get %></div>
-          <div class='col-sm-2'></div>
           <div class='col-sm-2'></div>
           <div class='col-sm-2'><%= button_to 'log out admin', destroy_admin_session_path, :class => 'admin_button', :method => :delete %></div>
         </div>
