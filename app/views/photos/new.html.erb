@@ -1,6 +1,6 @@
 <div class='admin_form'>
 
-  <%= form_for @photo do |f| %>
+  <%= form_for(@photo, multipart: true) do |f| %>
 
     <% if @photo.errors.any? %>
       <% @photo.errors.full_messages.each do |msg| %>
