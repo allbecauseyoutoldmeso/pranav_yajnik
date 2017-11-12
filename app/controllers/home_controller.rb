@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def about_pranav
+    @about_pranav = @pranav.about.html_safe
   end
 
   def gallery
