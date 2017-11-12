@@ -2,15 +2,20 @@
 
   <div class='gallery_frame'>
 
-    <%= link_to image_tag(photo.international_url, :class => 'gallery_image mx-auto'), photo.international_url, target: '_blank' %>
-
+    <div class='row'>
+      <div class='col-sm-2'></div>
+      <div class='col-sm-8'>
+        <%= link_to image_tag(photo.international_url, :class => 'gallery_image'), photo.international_url, target: '_blank' %>
+      </div>
+      <div class='col-sm-2'></div>
+    </div>
 
     <% if admin_signed_in? %>
       <div class='text-center'>
         <%= button_to 'delete', "/photos/#{photo.id}", method: :delete, :class => 'admin_button delete_photo_button' %>
       </div>
     <% end %>
-  </div>
 
+  </div>
 
 <% end %>
