@@ -102,6 +102,9 @@ textarea:focus, input:focus{
   height: auto;
   border: 3px solid #F86B42;
   border-radius: 10px;
+}
+
+.gallery_frame {
   margin: 100px;
 }
 
@@ -179,16 +182,12 @@ textarea:focus, input:focus{
   margin-top: 80px
 }
 
-.photo_form {
-  margin: 50px
-}
-
 .admin_label {
   font-size: 20px
 }
 
 .sign_in_form {
-  margin: 30px
+  margin: 50px
 }
 
 .sign_in_input {
@@ -197,6 +196,15 @@ textarea:focus, input:focus{
   width: 300px
 }
 
-.lesson_form {
-  margin-top: 50px
+.admin_form {
+  margin: 50px
+}
+
+.about_pranav_input {
+ height: 200px;
+ resize: none
+}
+
+.delete_photo_button {
+  margin-top: 10px
 }

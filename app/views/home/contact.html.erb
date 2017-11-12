@@ -6,7 +6,7 @@
   <div class='col-sm-5 contacts'>
 
     <% if @pranav.email_address %>
-      <a href='mailto:pranav@yahoo.co.uk?Subject=Kathak%20lessons' target='_blank'>
+      <a href='<%="mailto:#{@pranav.email_address}?Subject=Kathak%20lessons"%>'>
         <p class='d-flex justify-content-start'>
           <span><img src='social_media/email_2.png' class='img-fluid contact'></span>
           <span class='contact_text'>
@@ -16,9 +16,8 @@
       </a>
     <% end %>
 
-
     <% if @pranav.telephone_number %>
-      <a href='tel:01234567890' target='_blank'>
+      <a href='<%="tel:#{@pranav.telephone_number}"%>'>
         <p class='d-flex justify-content-start'>
           <span><img src='social_media/phone_2.png' class='img-fluid contact'></span>
           <span class='contact_text'>
@@ -29,7 +28,7 @@
     <% end %>
 
     <% if @pranav.twitter_url %>
-      <a href='https://www.twitter.com' target='_blank'>
+      <a href='<%="https://www.twitter.com/#{@pranav.twitter_url}"%>' target='_blank'>
         <p class='d-flex justify-content-start'>
           <span><img src='social_media/twitter_2.png' class='img-fluid contact'></span>
           <span class='contact_text'>
@@ -39,8 +38,8 @@
       </a>
     <% end %>
 
-    <% if @pranav.twitter_url %>
-      <a href='https://www.facebook.com' target='_blank'>
+    <% if @pranav.facebook_url %>
+      <a href='<%="https://www.facebook.com/#{@pranav.facebook_url}"%>' target='_blank'>
         <p class='d-flex justify-content-start'>
           <span><img src='social_media/facebook_2.png' class='img-fluid contact'></span>
           <span class='contact_text'>

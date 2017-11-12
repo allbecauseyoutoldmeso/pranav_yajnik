@@ -56,23 +56,25 @@
 
       <% if admin_signed_in? %>
 
-        <div class='row admin_links container-fluid fixed-top'>
+        <div class='row admin_links container-fluid fixed-top'>      
           <div class='col-sm-2'><%= button_to 'add photo', new_photo_path, :class => 'admin_button', :method => :get %></div>
           <div class='col-sm-2'><%= button_to 'add lesson', new_lesson_path, :class => 'admin_button', :method => :get %></div>
+          <div class='col-sm-2'><%= button_to 'edit pranav', edit_pranav_path(1), :class => 'admin_button', :method => :get %></div>
+          <div class='col-sm-2'></div>
+          <div class='col-sm-2'></div>
           <div class='col-sm-2'><%= button_to 'log out admin', destroy_admin_session_path, :class => 'admin_button', :method => :delete %></div>
         </div>
 
       <% end %>
 
-
       <%= yield %>
 
       <div class='fixed-bottom d-flex justify-content-end' id='footer'>
         <span class='mr-auto'>© Pranav Yajnik. All rights reserved.</span>
-        <span class ='hidden-sm-down'><a href='https://www.facebook.com' target='_blank'><img src='social_media/facebook.png' class='img-fluid icon'></a></span>
-        <span class ='hidden-sm-down'><a href='https://www.twitter.com' target='_blank'><img src='social_media/twitter.png' class='img-fluid icon'></a></span>
-        <span class ='hidden-sm-down'><a href='tel:01234123123' target='_blank'><img src='social_media/phone.png' class='img-fluid icon'></a></span>
-        <span class ='hidden-sm-down'><a href='mailto:pranav@yahoo.co.uk?Subject=Kathak%20lessons' target='_blank'><img src='social_media/email.png' class='img-fluid icon'></a></span>
+        <span class ='hidden-sm-down'><a href='<%="https://www.facebook.com/#{@pranav.facebook_url}"%>' target='_blank'><img src='social_media/facebook.png' class='img-fluid icon'></a></span>
+        <span class ='hidden-sm-down'><a href='<%="https://www.twitter.com/#{@pranav.twitter_url}"%>' target='_blank'><img src='social_media/twitter.png' class='img-fluid icon'></a></span>
+        <span class ='hidden-sm-down'><a href='<%="tel:#{@pranav.telephone_number}"%>'><img src='social_media/phone.png' class='img-fluid icon'></a></span>
+        <span class ='hidden-sm-down'><a href='<%="mailto:#{@pranav.email_address}?Subject=Kathak%20lessons"%>'><img src='social_media/email.png' class='img-fluid icon'></a></span>
       </div>
 
     </div>

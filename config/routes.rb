@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   resources 'photos'
   resources 'lessons'
+  resources 'pranavs'
 
 end
