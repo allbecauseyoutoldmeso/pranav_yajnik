@@ -19,6 +19,16 @@ class LessonsController < ApplicationController
     end
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+    render 'new'
+  end
+
+  def update
+    Lesson.find(params[:id]).update(lesson_params)
+    redirect_to lessons_path
+  end
+
   def destroy
     authenticate_admin!
     lesson = Lesson.find(params[:id])

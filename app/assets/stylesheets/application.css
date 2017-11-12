@@ -217,6 +217,11 @@ textarea:focus, input:focus{
  resize: none
 }
 
-.delete_photo_button {
+.gallery_delete_button {
   margin-top: 10px
+}
+
+.lesson_freetext {
+  height: 100px;
+  resize: none
 }

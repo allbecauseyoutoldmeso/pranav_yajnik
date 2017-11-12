@@ -14,7 +14,7 @@
 
       <% if admin_signed_in? %>
         <div class='text-center'>
-          <%= button_to 'delete', "/photos/#{item.id}", method: :delete, :class => 'admin_button delete_photo_button' %>
+          <%= button_to 'delete', "/photos/#{item.id}", method: :delete, :class => 'admin_button gallery_delete_button' %>
         </div>
       <% end %>
 
@@ -35,7 +35,7 @@
 
       <% if admin_signed_in? %>
         <div class='text-center'>
-          <%= button_to 'delete', "/videos/#{item.id}", method: :delete, :class => 'admin_button delete_photo_button' %>
+          <%= button_to 'delete', "/videos/#{item.id}", method: :delete, :class => 'admin_button gallery_delete_button' %>
         </div>
       <% end %>
 

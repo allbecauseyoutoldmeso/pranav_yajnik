@@ -71,10 +71,18 @@
 
       <div class='fixed-bottom d-flex justify-content-end' id='footer'>
         <span class='mr-auto'>© Pranav Yajnik. All rights reserved.</span>
-        <span class ='hidden-sm-down'><a href='<%="https://www.facebook.com/#{@pranav.facebook_url}"%>' target='_blank'><img src='social_media/facebook.png' class='img-fluid icon'></a></span>
-        <span class ='hidden-sm-down'><a href='<%="https://www.twitter.com/#{@pranav.twitter_url}"%>' target='_blank'><img src='social_media/twitter.png' class='img-fluid icon'></a></span>
+        <% if @pranav.has_facebook_url? %>
+          <span class ='hidden-sm-down'><a href='<%="https://www.facebook.com/#{@pranav.facebook_url}"%>' target='_blank'><img src='social_media/facebook.png' class='img-fluid icon'></a></span>
+        <% end %>
+        <% if @pranav.has_twitter_url? %>
+          <span class ='hidden-sm-down'><a href='<%="https://www.twitter.com/#{@pranav.twitter_url}"%>' target='_blank'><img src='social_media/twitter.png' class='img-fluid icon'></a></span>
+        <% end %>
+        <% if @pranav.has_telephone_number? %>
         <span class ='hidden-sm-down'><a href='<%="tel:#{@pranav.telephone_number}"%>'><img src='social_media/phone.png' class='img-fluid icon'></a></span>
-        <span class ='hidden-sm-down'><a href='<%="mailto:#{@pranav.email_address}?Subject=Kathak%20lessons"%>'><img src='social_media/email.png' class='img-fluid icon'></a></span>
+        <% end %>
+        <% if @pranav.has_email_address? %>
+          <span class ='hidden-sm-down'><a href='<%="mailto:#{@pranav.email_address}?Subject=Kathak%20lessons"%>'><img src='social_media/email.png' class='img-fluid icon'></a></span>
+        <% end %>
       </div>
 
     </div>

@@ -18,11 +18,13 @@
       <%= Date::DAYNAMES[lesson.day] %>
       <%= lesson.time.strftime('%H:%M') %>
     </p>
+
     <% if admin_signed_in? %>
-      <p>
+      <%= button_to 'edit', edit_lesson_path(lesson), method: :get, :class => 'admin_button' %>
+      <br>
       <%= button_to 'delete', "/lessons/#{lesson.id}", method: :delete, :class => 'admin_button' %>
-      </p>
     <% end %>
+
   </div>
 
 
