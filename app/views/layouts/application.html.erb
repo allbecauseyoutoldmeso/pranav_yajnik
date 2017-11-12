@@ -18,12 +18,10 @@
 
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 
-    <style><%= yield :stylesheets %></style>
-
   </head>
 
   <body>
-  
+
     <div class='container'>
 
       <nav class='navbar navbar-toggleable-md fixed-top'>
@@ -60,10 +58,7 @@
 
         <div class='row admin_links container-fluid fixed-top'>
           <div class='col-sm-2'><%= button_to 'add photo', new_photo_path, :class => 'admin_button', :method => :get %></div>
-          <div class='col-sm-2'><%= button_to 'edit photos', photos_path, :class => 'admin_button', :method => :get %></div>
           <div class='col-sm-2'><%= button_to 'add lesson', new_lesson_path, :class => 'admin_button', :method => :get %></div>
-          <div class='col-sm-2'><%= button_to 'edit lessons', lessons_path, :class => 'admin_button', :method => :get %></div>
-          <div class='col-sm-2'><%= button_to 'public pages', root_path, :class => 'admin_button', :method => :get %></div>
           <div class='col-sm-2'><%= button_to 'log out admin', destroy_admin_session_path, :class => 'admin_button', :method => :delete %></div>
         </div>
 
@@ -76,6 +71,7 @@
         <span class='mr-auto'>© Pranav Yajnik. All rights reserved.</span>
         <span class ='hidden-sm-down'><a href='https://www.facebook.com' target='_blank'><img src='social_media/facebook.png' class='img-fluid icon'></a></span>
         <span class ='hidden-sm-down'><a href='https://www.twitter.com' target='_blank'><img src='social_media/twitter.png' class='img-fluid icon'></a></span>
+        <span class ='hidden-sm-down'><a href='tel:01234123123' target='_blank'><img src='social_media/phone.png' class='img-fluid icon'></a></span>
         <span class ='hidden-sm-down'><a href='mailto:pranav@yahoo.co.uk?Subject=Kathak%20lessons' target='_blank'><img src='social_media/email.png' class='img-fluid icon'></a></span>
       </div>
 

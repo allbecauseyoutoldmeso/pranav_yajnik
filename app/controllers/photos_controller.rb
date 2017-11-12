@@ -2,10 +2,6 @@ class PhotosController < ApplicationController
 
   before_action :authenticate_admin!
 
-  def index
-    @photos = Photo.order(created_at: :desc)
-  end
-
   def new
     @photo = Photo.new
   end
@@ -13,7 +9,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      redirect_to photos_path
+      redirect_to '/gallery'
     else
       render 'new'
     end

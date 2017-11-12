@@ -196,3 +196,7 @@ textarea:focus, input:focus{
   border: none;
   width: 300px
 }
+
+.lesson_form {
+  margin-top: 50px
+}
