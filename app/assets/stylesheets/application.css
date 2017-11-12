@@ -18,8 +18,16 @@ a:hover {
   text-decoration: none
 }
 
+a {
+  color: white
+}
+
 button:focus {
   outline: none
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 /*navbar*/
@@ -63,6 +71,12 @@ button:focus {
   padding-right: 15px
 }
 
+/*home*/
+
+.mobile_home_image {
+  margin-top: 100px
+}
+
 /*about_pranav*/
 
 #about_pranav_image {
@@ -88,6 +102,9 @@ button:focus {
   height: auto;
   border: 3px solid #F86B42;
   border-radius: 10px;
+}
+
+.gallery_frame {
   margin: 100px;
 }
 
@@ -129,4 +146,65 @@ button:focus {
   max-width: 100%;
   height: auto;
   border-radius: 10px
+}
+
+/*admin*/
+
+.photo {
+  max-width: 100%;
+  height: auto;
+  margin: 10px
+}
+
+.photo_row {
+  margin: 50px
+}
+
+.admin_button {
+  background-color: #F86B42;
+  color: white;
+  border: 2px solid white;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 10px
+}
+
+.admin_button:hover {
+  background-color: #F86B42;
+  color: white;
+  border: 2px solid white;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 10px
+}
+
+.admin_links {
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 80px
+}
+
+.admin_label {
+  font-size: 20px
+}
+
+.sign_in_form {
+  margin: 50px
+}
+
+.sign_in_input {
+  border-radius: 5px;
+  border: none;
+  width: 300px
+}
+
+.admin_form {
+  margin: 50px
+}
+
+.about_pranav_input {
+ height: 200px;
+ resize: none
+}
+
+.delete_photo_button {
+  margin-top: 10px
 }

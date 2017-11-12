@@ -1,0 +1,30 @@
+<div >
+  <img id='lessons_image' class='mx-auto' src='pranav/feet.jpg'>
+</div>
+
+
+<% @lessons.each do |lesson| %>
+
+  <div class='text-center class_info'>
+    <p class='class_level'>
+      <%= lesson.what %>
+    </p>
+    <p>
+      Where:
+      <%= lesson.where %>
+    </p>
+    <p>
+      When:
+      <%= Date::DAYNAMES[lesson.day] %>
+      ,
+      <%= lesson.time.strftime('%H:%M') %>
+    </p>
+    <% if admin_signed_in? %>
+      <p>
+      <%= button_to 'delete', "/lessons/#{lesson.id}", method: :delete, :class => 'admin_button' %>
+      </p>
+    <% end %>
+  </div>
+
+
+<% end %>

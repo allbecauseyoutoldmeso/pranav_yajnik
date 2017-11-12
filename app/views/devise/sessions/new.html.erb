@@ -1,0 +1,17 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class='sign_in_form admin_label'>
+    <%= f.label :email, 'email' %><br />
+    <%= f.email_field :email, autofocus: true, class: 'sign_in_input' %>
+  </div>
+
+  <div class='sign_in_form admin_label'>
+    <%= f.label :password, 'password' %><br />
+    <%= f.password_field :password, autocomplete: 'off', class: 'sign_in_input' %>
+  </div>
+
+  <div class='sign_in_form admin_label'>
+    <%= f.submit 'sign in', class: 'admin_button' %>
+  </div>
+
+<% end %>

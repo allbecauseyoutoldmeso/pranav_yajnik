@@ -1,4 +1,15 @@
-<img class='gallery_image mx-auto' src='pranav/hands.jpg'>
-<img class='gallery_image mx-auto' src='pranav/flyer.jpg'>
-<img class='gallery_image mx-auto' src='pranav/feet.jpg'>
-<img class='gallery_image mx-auto' src='pranav/grunge.jpg'>
+<% @photos.each do |photo| %>
+
+  <div class='gallery_frame'>
+
+    <%= link_to image_tag(photo.image.url, :class => 'gallery_image mx-auto'), photo.image.url, target: '_blank' %>
+
+    <% if admin_signed_in? %>
+      <div class='text-center'>
+        <%= button_to 'delete', "/photos/#{photo.id}", method: :delete, :class => 'admin_button delete_photo_button' %>
+      </div>
+    <% end %>
+  </div>
+
+
+<% end %>
