@@ -24,8 +24,7 @@
 
         <% @photo_placers.each do |photo_placer| %>
           <div class='col-sm-2'>
-
-            <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: item.id}, :class => 'admin_button' %>
+            <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: item.id}, :class => photo_placer_button_class(photo_placer, item) %>
           </div>
         <% end %>
 

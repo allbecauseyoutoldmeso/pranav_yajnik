@@ -188,6 +188,14 @@ textarea:focus, input:focus{
   border-radius: 10px
 }
 
+.selected_photo_button {
+  background-color: white;
+  color: #F86B42;
+  border: 2px solid #F86B42;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 10px
+}
+
 .admin_links {
   background-color: gray;
   border-radius: 10px;
