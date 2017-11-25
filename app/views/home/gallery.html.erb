@@ -13,9 +13,24 @@
       </div>
 
       <% if admin_signed_in? %>
-        <div class='text-center'>
-          <%= button_to 'delete', "/photos/#{item.id}", method: :delete, :class => 'admin_button gallery_delete_button' %>
+
+        <div class='row'>
+
+          <div class='col-sm-2'></div>
+
+          <div class='col-sm-2'>
+            <%= button_to 'delete', "/photos/#{item.id}", method: :delete, :class => 'admin_button gallery_delete_button' %>
+          </div>
+
+        <% @photo_placers.each do |photo_placer| %>
+          <div class='col-sm-2'>
+
+            <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: item.id}, :class => 'admin_button' %>
+          </div>
+        <% end %>
+
         </div>
+
       <% end %>
 
     </div>

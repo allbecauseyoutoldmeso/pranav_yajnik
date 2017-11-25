@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
 
   def index
+    get_photo_url('lessons')
     @lessons = Lesson.sorted_by_time
   end
 

@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   def get_pranav
     @pranav = Pranav.first
   end
+
+  def get_photo_url(place)
+    @photo_url = PhotoPlacer.find_by(place: place).photo.international_url
+  end
 end

@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   resources 'lessons'
   resources 'pranavs'
   resources 'videos'
+  resources 'photo_placers'
 
 end
