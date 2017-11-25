@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171124181440) do
   create_table "photo_placers", force: :cascade do |t|
     t.bigint "photo_id"
     t.string "place"
+    t.string "url"
     t.index ["photo_id"], name: "index_photo_placers_on_photo_id"
   end
 
