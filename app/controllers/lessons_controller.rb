@@ -1,17 +1,17 @@
 class LessonsController < ApplicationController
 
+  before_action :authenticate_admin!, except: [:index]
+
   def index
     get_photo_url('lessons')
     @lessons = Lesson.sorted_by_time
   end
 
   def new
-    authenticate_admin!
     @lesson = Lesson.new
   end
 
   def create
-    authenticate_admin!
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
       redirect_to lessons_path
