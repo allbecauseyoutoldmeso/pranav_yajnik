@@ -8,10 +8,12 @@ class CreatePhotoPlacers < ActiveRecord::Migration[5.1]
     end
 
     connection = ActiveRecord::Base.connection
-    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (1, 'home', '/home')")
-    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (2, 'about pranav', '/about_pranav')")
-    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (3, 'lessons', '/lessons')")
-    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (4, 'contact', '/contact')")
+    photo_id =  Photo.first.id
+    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (#{photo_id}, 'home', '/')")
+    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (#{photo_id}, 'mobile home', '/')")
+    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (#{photo_id}, 'about pranav', '/about_pranav')")
+    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (#{photo_id}, 'lessons', '/lessons')")
+    connection.execute("INSERT INTO photo_placers (photo_id, place, url) VALUES (#{photo_id}, 'contact', '/contact')")
   end
 
   def down

@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def index
     get_photo_url('home')
+    @mobile_photo_url = photo_url('mobile home')
   end
 
   def about_pranav
@@ -11,7 +12,7 @@ class HomeController < ApplicationController
 
   def gallery
     @gallery_items = (Photo.all + Video.all).sort_by(&:created_at).reverse
-    @photo_placers = PhotoPlacer.all
+    @photo_placers = PhotoPlacer.order(:place)
   end
 
   def contact
