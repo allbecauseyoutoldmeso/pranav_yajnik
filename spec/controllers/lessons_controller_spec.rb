@@ -23,6 +23,7 @@ RSpec.describe LessonsController, type: :controller do
   end
 
   context 'admin user' do
+    
     let(:admin) { create(:admin) }
 
     before do
