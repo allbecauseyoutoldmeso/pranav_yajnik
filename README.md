@@ -6,7 +6,7 @@ Rails-based website for a friend who teaches Kathak
 
 * Custom-built admin tool enabling said friend to add and edit lessons, contacts, personal information, photos and videos.
 
-* Live [here](https://pranav-yajnik.herokuapp.com/)
+* Check it out [here](https://pranav-yajnik.herokuapp.com/).
 
 
 <img width="1435" alt="screen shot 2017-11-26 at 22 50 55" src="https://user-images.githubusercontent.com/25392162/33245237-e0f199da-d2fc-11e7-9144-e6746af29fbb.png">
