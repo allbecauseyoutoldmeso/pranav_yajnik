@@ -1,6 +1,9 @@
 class Photo < ActiveRecord::Base
+
   has_attached_file :image
+
   validates_attachment :image, content_type: { content_type: ['image/jpeg', 'image/gif', 'image/png'] }
+  
   has_many :photo_placers
 
   def international_url

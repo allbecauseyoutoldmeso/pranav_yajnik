@@ -4,6 +4,8 @@ FactoryBot.define do
   end
 
   factory :lesson do
+    day 1
+    time '18:00'.to_time
   end
 
   factory :photo_placer do
@@ -11,6 +13,7 @@ FactoryBot.define do
   end
 
   factory :photo do
+    image { File.new("#{Rails.root}/spec/support/test_image.jpg") }
   end
 
   factory :pranav do

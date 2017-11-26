@@ -41,7 +41,6 @@ RSpec.describe HomeController, type: :controller do
 
     it 'assigns about pranav' do
       expect(assigns(:about_pranav)).to eq pranav.about
-
     end
 
     it 'assigns about pranav image url' do
@@ -72,6 +71,16 @@ RSpec.describe HomeController, type: :controller do
         get :gallery
         expect(assigns(:photo_placers)).to eq [photo_placer_2, photo_placer_3, photo_placer_1]
       end
+    end
+  end
+
+  describe 'contact' do
+    let!(:photo) { create(:photo) }
+    let!(:photo_placer) { create(:photo_placer, place: 'contact', photo: photo) }
+
+    it 'assigns contact image url' do
+      get :contact
+      expect(assigns(:photo_url)).to eq photo.international_url
     end
   end
 end

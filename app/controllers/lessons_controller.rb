@@ -31,7 +31,6 @@ class LessonsController < ApplicationController
   end
 
   def destroy
-    authenticate_admin!
     lesson = Lesson.find(params[:id])
     lesson.destroy
     redirect_to lessons_path
