@@ -15,8 +15,7 @@
     </p>
     <p>
       When:
-      <%= Date::DAYNAMES[lesson.day] %>
-      <%= lesson.time.strftime('%H:%M') %>
+      <%= lesson.when %>
     </p>
 
     <% if admin_signed_in? %>

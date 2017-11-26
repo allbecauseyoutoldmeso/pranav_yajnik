@@ -12,6 +12,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'figaro'
 gem 'factory_bot_rails', '~> 4.0', :group => [:development, :test]
 gem 'rails-controller-testing', :group => [:development, :test]
+gem 'capybara-screenshot', :group => :test
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'

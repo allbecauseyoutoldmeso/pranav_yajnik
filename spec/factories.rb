@@ -6,6 +6,8 @@ FactoryBot.define do
   factory :lesson do
     day 1
     time '18:00'.to_time
+    what 'Beginners'
+    where '123 Pranav Street, London, AB1 2CD'
   end
 
   factory :photo_placer do
@@ -21,8 +23,8 @@ FactoryBot.define do
     about 'Pranav Yajnik teaches kathak.'
     telephone_number '01234012012'
     email_address 'pranav@example.com'
-    twitter_url 'pranav twitter'
-    facebook_url 'pranav facebook'
+    twitter_url 'pranav_twitter'
+    facebook_url 'pranav_facebook'
   end
 
   factory :video do

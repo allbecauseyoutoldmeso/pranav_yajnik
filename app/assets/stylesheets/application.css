@@ -73,7 +73,7 @@ textarea:focus, input:focus{
 
 /*home*/
 
-.mobile_home_image {
+#mobile_home_image {
   margin-top: 100px
 }
 
@@ -153,7 +153,7 @@ textarea:focus, input:focus{
   margin-top: 50px
 }
 
-#contact-image {
+#contact_image {
   margin-top: 50px;
   max-width: 100%;
   height: auto;

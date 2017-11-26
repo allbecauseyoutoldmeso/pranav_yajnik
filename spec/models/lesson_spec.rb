@@ -11,4 +11,12 @@ RSpec.describe Lesson, type: :model do
       expect(Lesson.sorted_by_time).to eq [lesson_2, lesson_1, lesson_3]
     end
   end
+
+  describe 'when' do
+    let(:lesson) { create(:lesson, day: 1, time: '19:00'.to_time) }
+
+    it 'returns a formatted string' do
+      expect(lesson.when).to eq 'Monday 19:00'
+    end
+  end
 end
