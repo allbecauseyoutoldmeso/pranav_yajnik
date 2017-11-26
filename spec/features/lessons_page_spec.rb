@@ -5,23 +5,57 @@ RSpec.describe 'lessons page' do
   let!(:lesson) { create(:lesson) }
   let!(:pranav) { create(:pranav) }
 
-  before do
-    visit '/lessons'
+  context 'visitor' do
+
+    before do
+      visit '/lessons'
+    end
+
+    it 'shows what' do
+      expect(page).to have_content lesson.what
+    end
+
+    it 'shows where' do
+      expect(page).to have_content lesson.where
+    end
+
+    it 'shows where' do
+      expect(page).to have_content lesson.when
+    end
+
+    it 'shows lessons image' do
+      expect(page).to have_css('img#lessons_image')
+    end
   end
 
-  it 'shows what' do
-    expect(page).to have_content lesson.what
-  end
+  context 'admin' do
 
-  it 'shows where' do
-    expect(page).to have_content lesson.where
-  end
+    before do
+      sign_in_admin
+      visit '/lessons'
+    end
 
-  it 'shows where' do
-    expect(page).to have_content lesson.when
-  end
+    it 'admin can delete lesson' do
+      click_button 'delete'
+      expect(page).not_to have_content lesson.what
+    end
 
-  it 'shows lessons image' do
-    expect(page).to have_css('img#lessons_image')
+    it 'admin can edit lesson' do
+      click_button 'edit'
+      select('Wednesday', from: 'day')
+      click_button 'save'
+      expect(page).to have_content 'Wednesday'
+    end
+
+    it 'admin can add lesson' do
+      click_button 'add lesson'
+      fill_in 'what', with: 'Intermediate'
+      fill_in 'where', with: '123 Pranav Street, London, AB1 2CD'
+      select('Monday', from: 'day')
+      select('18', from: 'lesson_time_4i')
+      select('00', from: 'lesson_time_5i')
+      click_button 'save'
+      expect(page).to have_content 'Intermediate'
+    end
   end
 end

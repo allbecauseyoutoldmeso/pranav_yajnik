@@ -30,10 +30,20 @@ RSpec.describe 'gallery page' do
     context 'video' do
       let!(:video) { create(:video) }
 
-      it 'admin can delete video' do
+      before do
         visit '/gallery'
+      end
+
+      it 'admin can delete video' do
         click_button 'delete'
         expect(page).not_to have_css('iframe.gallery_video')
+      end
+
+      it 'admin can add video' do
+        click_button 'add video'
+        fill_in 'caption', with: 'pranav dancing'
+        fill_in 'you tube id', with: 'ADCDEF'
+        expect{ click_button 'save' }.to change{ Video.count }.by(1)
       end
     end
 
@@ -102,6 +112,13 @@ RSpec.describe 'gallery page' do
       it 'setting contact photo redirects user to contact page' do
         first(:button, 'contact').click
         expect(page).to have_content(pranav.email_address)
+      end
+
+      it 'admin can add photo' do
+        allow_any_instance_of(Paperclip::HasAttachedFile).to receive(:define_setter)
+        click_button 'add photo'
+        fill_in 'caption', with: 'pranav dancing'
+        expect { click_button 'upload' }.to change{ Photo.count }.by(1)
       end
     end
   end
