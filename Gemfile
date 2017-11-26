@@ -10,7 +10,8 @@ gem 'pry'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
 gem 'figaro'
-gem "factory_bot_rails", "~> 4.0", :group => [:development, :test]
+gem 'factory_bot_rails', '~> 4.0', :group => [:development, :test]
+gem 'rails-controller-testing', :group => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'

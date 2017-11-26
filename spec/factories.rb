@@ -7,6 +7,7 @@ FactoryBot.define do
   end
 
   factory :photo_placer do
+    photo
   end
 
   factory :photo do
