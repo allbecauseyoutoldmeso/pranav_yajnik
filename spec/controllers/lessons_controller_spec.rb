@@ -51,5 +51,42 @@ RSpec.describe LessonsController, type: :controller do
         expect(response).to redirect_to lessons_path
       end
     end
+
+    describe 'update' do
+      let(:lesson) { create(:lesson, day: 1) }
+      let(:params) do
+        { id: lesson.id,
+          lesson:
+          {
+            day: 2,
+          }
+        }
+      end
+
+      it 'updates the lesson' do
+        expect{ post :update, params: params }.to change{ lesson.reload.day }.from(1).to(2)
+      end
+
+      it 'redirects to lessons page' do
+        post :update, params: params
+        expect(response).to redirect_to lessons_path
+      end
+    end
+
+    describe 'destroy' do
+      let!(:lesson) { create(:lesson) }
+      let(:params) do
+        { id: lesson.id }
+      end
+
+      it 'destroys the lesson' do
+        expect{ post :destroy, params: params }.to change{ Lesson.count }.from(1).to(0)
+      end
+
+      it 'redirects to lessons page' do
+        post :destroy, params: params
+        expect(response).to redirect_to lessons_path
+      end
+    end
   end
 end

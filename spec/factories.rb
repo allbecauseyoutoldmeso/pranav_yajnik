@@ -10,6 +10,7 @@ FactoryBot.define do
 
   factory :photo_placer do
     photo
+    url '/'
   end
 
   factory :photo do
