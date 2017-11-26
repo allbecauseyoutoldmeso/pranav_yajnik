@@ -6,7 +6,7 @@ RSpec.describe 'admin account' do
   let!(:pranav) { create(:pranav) }
   let(:admin) { create(:admin, email: 'example@example.com', password: '12345678')}
 
-  it 'admin can sign in' do
+  it 'admin can log in' do
     log_in_admin
     expect(page).to have_button 'log out admin'
   end
