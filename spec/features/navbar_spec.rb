@@ -4,7 +4,6 @@ RSpec.describe 'navbar' do
   let!(:home_photo_placer) { create(:photo_placer, place: 'home') }
   let!(:mobile_home_photo_placer) { create(:photo_placer, place: 'mobile home') }
   let!(:about_pranav_photo_placer) { create(:photo_placer, place: 'about pranav') }
-  let!(:about_pranav_photo_placer) { create(:photo_placer, place: 'about pranav') }
   let!(:contact_photo_placer) { create(:photo_placer, place: 'contact') }
   let!(:lessons_photo_placer) { create(:photo_placer, place: 'lessons') }
   let!(:lesson) { create(:lesson, what: 'Beginners')}
