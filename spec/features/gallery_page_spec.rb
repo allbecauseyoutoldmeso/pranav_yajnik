@@ -115,9 +115,9 @@ RSpec.describe 'gallery page' do
       end
 
       it 'admin can add photo' do
-        allow_any_instance_of(Paperclip::HasAttachedFile).to receive(:define_setter)
         click_button 'add photo'
         fill_in 'caption', with: 'pranav dancing'
+        page.attach_file('photo[image]', "#{Rails.root}/spec/support/test_image.jpg")
         expect { click_button 'upload' }.to change{ Photo.count }.by(1)
       end
     end

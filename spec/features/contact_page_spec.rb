@@ -37,14 +37,35 @@ RSpec.describe 'contact page' do
     before do
       sign_in_admin
       visit '/contact'
+      click_button 'edit pranav'
     end
 
-    it 'admin can edit contacts' do
-      click_button 'edit pranav'
+    it 'admin can edit email address' do
       fill_in 'email address', with: 'pranav@new_domain.com'
       click_button 'save'
       click_link 'contact'
       expect(page).to have_content 'pranav@new_domain.com'
+    end
+
+    it 'admin can edit telephone number' do
+      fill_in 'phone number', with: '12345123123'
+      click_button 'save'
+      click_link 'contact'
+      expect(page).to have_content '12345123123'
+    end
+
+    it 'admin can edit twitter handle' do
+      fill_in 'twitter handle', with: 'pranav_new'
+      click_button 'save'
+      click_link 'contact'
+      expect(page).to have_content 'pranav_new'
+    end
+
+    it 'admin can edit faceboook handle' do
+      fill_in 'facebook handle', with: 'pranav_new'
+      click_button 'save'
+      click_link 'contact'
+      expect(page).to have_content 'pranav_new'
     end
   end
 end

@@ -51,17 +51,18 @@ RSpec.describe PhotosController, type: :controller do
   end
 
   describe 'create' do
+    let(:image) { fixture_file_upload("#{Rails.root}/spec/support/test_image.jpg", 'image/jpeg') }
     let(:params) do
       {
         photo:
         {
-          caption: 'pranav'
+          caption: 'pranav',
+          image: image
         }
       }
     end
 
     it 'creates a photo' do
-      allow_any_instance_of(Paperclip::HasAttachedFile).to receive(:define_setter)
       expect{ post :create, params: params }.to change{ Photo.count }.from(0).to(1)
     end
   end
