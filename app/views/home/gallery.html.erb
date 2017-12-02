@@ -1,6 +1,6 @@
 <% @gallery_items.each do |item| %>
 
-  <% if item.is_a?(Photo) %>
+  <% if visible_photo(item) %>
 
     <div class='gallery_frame'>
 
@@ -14,12 +14,18 @@
 
       <% if admin_signed_in? %>
 
+        <br>
+
         <div class='row'>
 
           <div class='col-sm-2'></div>
 
           <div class='col-sm-2'>
-            <%= button_to 'delete', "/photos/#{item.id}", method: :delete, :class => 'admin_button gallery_delete_button' %>
+            <%= button_to 'delete', "/photos/#{item.id}", method: :delete, class: 'admin_button gallery_delete_button' %>
+          </div>
+
+          <div class='col-sm-2'>
+            <%= button_to 'hide', "/photos/#{item.id}", method: :patch, params: {photo: {hidden: item.shown}}, class: hide_photo_button_class(item) %>
           </div>
 
         </div>
@@ -55,7 +61,7 @@
 
     </div>
 
-  <% else %>
+  <% elsif video(item) %>
 
     <div class='gallery_frame'>
 
@@ -69,6 +75,8 @@
 
 
       <% if admin_signed_in? %>
+
+        <br>
 
         <div class='row'>
 

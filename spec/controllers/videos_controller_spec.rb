@@ -20,7 +20,7 @@ RSpec.describe VideosController, type: :controller do
     end
 
     it 'creates a video' do
-      expect{ post :create, params: params }.to change{ Video.count }.from(0).to(1)
+      expect { post :create, params: params }.to change { Video.count }.from(0).to(1)
     end
 
     it 'redirects to gallery' do
@@ -36,7 +36,7 @@ RSpec.describe VideosController, type: :controller do
     end
 
     it 'destroys the video' do
-      expect{ post :destroy, params: params }.to change{ Video.count }.from(1).to(0)
+      expect { post :destroy, params: params }.to change { Video.count }.from(1).to(0)
     end
 
     it 'redirects to gallery' do

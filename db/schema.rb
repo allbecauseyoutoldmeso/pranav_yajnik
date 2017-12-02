@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 20171124181440) do
+ActiveRecord::Schema.define(version: 20171202164939) do
 
   enable_extension "plpgsql"
 
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20171124181440) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean "hidden"
   end
 
   create_table "pranavs", force: :cascade do |t|
@@ -58,5 +59,4 @@ ActiveRecord::Schema.define(version: 20171124181440) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 end

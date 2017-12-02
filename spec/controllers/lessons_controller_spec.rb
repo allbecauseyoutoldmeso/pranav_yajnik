@@ -23,7 +23,7 @@ RSpec.describe LessonsController, type: :controller do
   end
 
   context 'admin user' do
-    
+
     let(:admin) { create(:admin) }
 
     before do
@@ -44,7 +44,7 @@ RSpec.describe LessonsController, type: :controller do
       end
 
       it 'creates a lesson' do
-        expect{ post :create, params: params }.to change{ Lesson.count }.from(0).to(1)
+        expect { post :create, params: params }.to change { Lesson.count }.from(0).to(1)
       end
 
       it 'redirects to lessons page' do
@@ -65,7 +65,7 @@ RSpec.describe LessonsController, type: :controller do
       end
 
       it 'updates the lesson' do
-        expect{ post :update, params: params }.to change{ lesson.reload.day }.from(1).to(2)
+        expect { post :update, params: params }.to change { lesson.reload.day }.from(1).to(2)
       end
 
       it 'redirects to lessons page' do
@@ -81,7 +81,7 @@ RSpec.describe LessonsController, type: :controller do
       end
 
       it 'destroys the lesson' do
-        expect{ post :destroy, params: params }.to change{ Lesson.count }.from(1).to(0)
+        expect { post :destroy, params: params }.to change { Lesson.count }.from(1).to(0)
       end
 
       it 'redirects to lessons page' do

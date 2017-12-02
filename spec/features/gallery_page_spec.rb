@@ -118,7 +118,14 @@ RSpec.describe 'gallery page' do
         click_button 'add photo'
         fill_in 'caption', with: 'pranav dancing'
         page.attach_file('photo[image]', "#{Rails.root}/spec/support/test_image.jpg")
-        expect { click_button 'upload' }.to change{ Photo.count }.by(1)
+        expect { click_button 'upload' }.to change { Photo.count }.by(1)
+      end
+
+      it 'admin can hide photo' do
+        first(:button, 'hide').click
+        click_button 'log out admin'
+        visit '/gallery'
+        expect(page).to have_css('img.gallery_image', count: 1)
       end
     end
   end

@@ -225,10 +225,6 @@ textarea:focus, input:focus{
  resize: none
 }
 
-.gallery_delete_button {
-  margin-top: 10px
-}
-
 .lesson_freetext {
   height: 100px;
   resize: none

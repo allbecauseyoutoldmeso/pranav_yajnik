@@ -15,6 +15,12 @@ class PhotosController < ApplicationController
     end
   end
 
+  def update
+    photo = Photo.find(params[:id])
+    photo.update(photo_params)
+    redirect_to '/gallery'
+  end
+
   def destroy
     redirect_to '/gallery' and return if Photo.count == 1
     photo = Photo.find(params[:id])
@@ -38,6 +44,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:image, :caption)
+    params.require(:photo).permit(:image, :caption, :hidden)
   end
 end

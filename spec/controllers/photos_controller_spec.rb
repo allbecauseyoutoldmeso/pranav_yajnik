@@ -19,7 +19,7 @@ RSpec.describe PhotosController, type: :controller do
       end
 
       it 'destroys the photo' do
-        expect{ post :destroy, params: params }.to change{ Photo.count }.from(2).to(1)
+        expect{ post :destroy, params: params }.to change { Photo.count }.from(2).to(1)
       end
 
       it 'redirects to the gallery' do
@@ -40,7 +40,7 @@ RSpec.describe PhotosController, type: :controller do
       end
 
       it 'does not destroy the photo' do
-        expect{ post :destroy, params: params }.not_to change{ Photo.count }.from(1)
+        expect { post :destroy, params: params }.not_to change { Photo.count }.from(1)
       end
 
       it 'redirects to the gallery' do
@@ -63,7 +63,24 @@ RSpec.describe PhotosController, type: :controller do
     end
 
     it 'creates a photo' do
-      expect{ post :create, params: params }.to change{ Photo.count }.from(0).to(1)
+      expect { post :create, params: params }.to change { Photo.count }.from(0).to(1)
+    end
+  end
+
+  describe 'update' do
+    let(:photo) { create(:photo, hidden: false) }
+    let(:params) do
+      {
+        id: photo.id,
+        photo:
+        {
+          hidden: true
+        }
+      }
+    end
+
+    it 'updates the photo' do
+      expect { post :update, params: params }.to change { photo.reload.hidden }.from(false).to(true)
     end
   end
 end
