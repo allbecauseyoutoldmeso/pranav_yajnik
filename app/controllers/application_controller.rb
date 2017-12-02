@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   def photo_url(place)
     PhotoPlacer.find_by(place: place).photo.international_url
   end
+
+  def get_photo_placers
+    @photo_placers = PhotoPlacer.order(:place)
+  end
 end

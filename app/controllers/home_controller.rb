@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
   def gallery
     @gallery_items = (Photo.all + Video.all).sort_by(&:created_at).reverse
-    @photo_placers = PhotoPlacer.order(:place)
+    get_photo_placers
   end
 
   def contact

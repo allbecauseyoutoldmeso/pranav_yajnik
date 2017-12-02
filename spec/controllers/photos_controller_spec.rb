@@ -71,6 +71,7 @@ RSpec.describe PhotosController, type: :controller do
     let(:photo) { create(:photo, hidden: false) }
     let(:params) do
       {
+        format: 'js', 
         id: photo.id,
         photo:
         {

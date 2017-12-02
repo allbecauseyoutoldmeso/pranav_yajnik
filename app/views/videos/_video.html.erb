@@ -1,0 +1,28 @@
+<div class='gallery_frame'>
+
+  <div class='row'>
+    <div class='col-sm-2'></div>
+    <div class='col-sm-8 embed-responsive embed-responsive-16by9'>
+      <iframe class='embed-responsive-item gallery_video' src='https://www.youtube.com/embed/<%=item.you_tube_id%>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' allowfullscreen></iframe>
+    </div>
+    <div class='col-sm-2'></div>
+  </div>
+
+
+  <% if admin_signed_in? %>
+
+    <br>
+
+    <div class='row'>
+
+      <div class='col-sm-2'></div>
+
+      <div class='col-sm-2'>
+        <%= button_to 'delete', "/videos/#{item.id}", method: :delete, :class => 'admin_button gallery_delete_button' %>
+      </div>
+
+    </div>
+
+  <% end %>
+
+</div>
