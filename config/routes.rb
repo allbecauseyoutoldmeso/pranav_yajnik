@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources 'pranavs'
   resources 'videos'
   resources 'photo_placers'
+  resources 'sitemap'
 
 end
