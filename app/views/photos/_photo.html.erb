@@ -5,7 +5,7 @@
     <div class='row'>
       <div class='col-sm-3'></div>
       <div class='col-sm-6'>
-        <%= link_to image_tag(photo.international_url, :class => 'gallery_image'), photo.international_url, target: '_blank' %>
+        <%= link_to image_tag(photo.international_url, class: 'gallery_image', alt: 'Gallery image'), photo.international_url, target: '_blank' %>
       </div>
       <div class='col-sm-3'></div>
     </div>
@@ -18,11 +18,11 @@
 
         <div class='col-sm-3'></div>
 
-        <div class='col-sm-2'>
+        <div class='col-sm-1'>
           <%= button_to 'delete', "/photos/#{photo.id}", method: :delete, class: 'admin_button gallery_delete_button' %>
         </div>
 
-        <div class='col-sm-2'>
+        <div class='col-sm-1'>
           <%= button_to 'hide', "/photos/#{photo.id}", method: :patch, params: {photo: {hidden: photo.shown}}, class: hide_photo_button_class(photo), remote: true %>
         </div>
 

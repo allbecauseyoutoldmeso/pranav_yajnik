@@ -3,19 +3,19 @@
   <span class='mr-auto'>© Pranav Yajnik. All rights reserved.</span>
 
   <% if pranav.has_facebook_url? %>
-    <span class ='hidden-sm-down'><a href=<%=pranav.facebook_link%> target='_blank'><%=image_tag('social_media/facebook.png', class: 'img-fluid icon')%></a></span>
+    <span class ='hidden-sm-down'><a href=<%=pranav.facebook_link%> target='_blank'><%=image_tag('social_media/facebook.png', class: 'img-fluid icon', alt: 'Facebook')%></a></span>
   <% end %>
 
   <% if pranav.has_twitter_url? %>
-    <span class ='hidden-sm-down'><a href=<%=pranav.twitter_link%> target='_blank'><%=image_tag('social_media/twitter.png', class: 'img-fluid icon')%></a></span>
+    <span class ='hidden-sm-down'><a href=<%=pranav.twitter_link%> target='_blank'><%=image_tag('social_media/twitter.png', class: 'img-fluid icon', alt: 'Twitter')%></a></span>
   <% end %>
 
   <% if pranav.has_telephone_number? %>
-    <span class ='hidden-sm-down'><a href=<%=pranav.telephone_link%>><%=image_tag('social_media/phone.png', class: 'img-fluid icon')%></a></span>
+    <span class ='hidden-sm-down'><a href=<%=pranav.telephone_link%>><%=image_tag('social_media/phone.png', class: 'img-fluid icon', alt: 'Call')%></a></span>
   <% end %>
 
   <% if pranav.has_email_address? %>
-    <span class ='hidden-sm-down'><a href=<%=pranav.email_link%>><%=image_tag('social_media/email.png', class: 'img-fluid icon')%></a></span>
+    <span class ='hidden-sm-down'><a href=<%=pranav.email_link%>><%=image_tag('social_media/email.png', class: 'img-fluid icon', alt: 'Email')%></a></span>
   <% end %>
 
 </div>
