@@ -8,28 +8,28 @@
     <% if @pranav.has_email_address? %>
       <%= render 'pranavs/contact_details',
         link: @pranav.email_link,
-        image: 'social_media/email_2',
+        image: 'social_media/email_2.png',
         contact: @pranav.email_address %>
     <% end %>
 
     <% if @pranav.has_telephone_number? %>
       <%= render 'pranavs/contact_details',
         link: @pranav.telephone_link,
-        image: 'social_media/telephone_2',
+        image: 'social_media/telephone_2.png',
         contact: @pranav.telephone_number %>
     <% end %>
 
     <% if @pranav.has_twitter_url? %>
       <%= render 'pranavs/contact_details',
         link: @pranav.twitter_link,
-        image: 'social_media/twitter_2',
+        image: 'social_media/twitter_2.png',
         contact: @pranav.twitter_url %>
     <% end %>
 
     <% if @pranav.has_facebook_url? %>
       <%= render 'pranavs/contact_details',
         link: @pranav.facebook_link,
-        image: 'social_media/facebook_2',
+        image: 'social_media/facebook_2.png',
         contact: @pranav.facebook_url %>
     <% end %>
 
