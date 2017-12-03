@@ -2,29 +2,6 @@
   <img id='lessons_image' class='mx-auto' src="<%= @photo_url %>">
 </div>
 
-
 <% @lessons.each do |lesson| %>
-
-  <div class='text-center class_info'>
-    <p class='class_level'>
-      <%= lesson.what %>
-    </p>
-    <p>
-      Where:
-      <%= lesson.where %>
-    </p>
-    <p>
-      When:
-      <%= lesson.when %>
-    </p>
-
-    <% if admin_signed_in? %>
-      <%= button_to 'edit', edit_lesson_path(lesson), method: :get, :class => 'admin_button' %>
-      <br>
-      <%= button_to 'delete', "/lessons/#{lesson.id}", method: :delete, :class => 'admin_button' %>
-    <% end %>
-
-  </div>
-
-
+  <%= render 'lesson_details', lesson: lesson %>
 <% end %>

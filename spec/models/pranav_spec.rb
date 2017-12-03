@@ -71,4 +71,28 @@ RSpec.describe Pranav, type: :model do
       expect(pranav.has_telephone_number?).to eq false
     end
   end
+
+  describe 'facebook_link' do
+    it 'returns facebook link' do
+      expect(pranav.facebook_link).to eq "https://www.facebook.com/#{pranav.facebook_url}"
+    end
+  end
+
+  describe 'twitter_link' do
+    it 'returns twitter link' do
+      expect(pranav.twitter_link).to eq "https://www.twitter.com/#{pranav.twitter_url}"
+    end
+  end
+
+  describe 'email_link' do
+    it 'returns email link' do
+      expect(pranav.email_link).to eq "mailto:#{pranav.email_address}?Subject=Kathak%20lessons"
+    end
+  end
+
+  describe 'telephone_link' do
+    it 'returns telephone link' do
+      expect(pranav.telephone_link).to eq "tel:#{pranav.telephone_number}"
+    end
+  end
 end

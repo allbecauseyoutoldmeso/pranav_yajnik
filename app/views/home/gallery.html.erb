@@ -1,7 +1,9 @@
 <% @gallery_items.each do |item| %>
+
   <% if visible_photo(item) %>
     <%= render 'photos/photo', photo: item %>
   <% elsif video(item) %>
     <%= render 'videos/video', video: item %>
   <% end %>
+  
 <% end %>

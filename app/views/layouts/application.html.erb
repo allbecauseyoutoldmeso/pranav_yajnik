@@ -24,67 +24,18 @@
 
     <div class='container'>
 
-      <nav class='navbar navbar-toggleable-md fixed-top'>
-
-        <button class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-          <%=image_tag('menu_2.png', id: 'menu_icon')%>
-        </button>
-
-        <a class='navbar-brand' href='/'>pranav yajnik</a>
-
-        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul class='navbar-nav ml-auto'>
-            <li class='nav-item'>
-              <a class='nav-link' href='/'>home</a>
-            </li>
-            <li class='nav-item'>
-              <a class='nav-link' href='/about_pranav'>about pranav</a>
-            </li>
-            <li class='nav-item'>
-              <a class='nav-link' href='/gallery'>gallery</a>
-            </li>
-            <li class='nav-item'>
-              <a class='nav-link' href='/lessons'>lessons</a>
-            </li>
-            <li class='nav-item'>
-              <a class='nav-link' href='/contact'>contact</a>
-            </li>
-
-          </ul>
-        </div>
-      </nav>
+      <%= render 'layouts/navbar' %>
 
       <% if admin_signed_in? %>
-
-        <div class='row admin_links container-fluid fixed-top'>
-          <div class='col-sm-2'><%= button_to 'add photo', new_photo_path, :class => 'admin_button', :method => :get %></div>
-          <div class='col-sm-2'><%= button_to 'add video', new_video_path, :class => 'admin_button', :method => :get %></div>
-          <div class='col-sm-2'><%= button_to 'add lesson', new_lesson_path, :class => 'admin_button', :method => :get %></div>
-          <div class='col-sm-2'><%= button_to 'edit pranav', edit_pranav_path(1), :class => 'admin_button', :method => :get %></div>
-          <div class='col-sm-2'></div>
-          <div class='col-sm-2'><%= button_to 'log out admin', destroy_admin_session_path, :class => 'admin_button', :method => :delete %></div>
-        </div>
-
+        <%= render 'layouts/admin_links' %>
       <% end %>
 
       <%= yield %>
 
-      <div class='fixed-bottom d-flex justify-content-end' id='footer'>
-        <span class='mr-auto'>© Pranav Yajnik. All rights reserved.</span>
-        <% if @pranav.has_facebook_url? %>
-          <span class ='hidden-sm-down'><a href='<%="https://www.facebook.com/#{@pranav.facebook_url}"%>' target='_blank'><%=image_tag('social_media/facebook.png', class: 'img-fluid icon')%></a></span>
-        <% end %>
-        <% if @pranav.has_twitter_url? %>
-          <span class ='hidden-sm-down'><a href='<%="https://www.twitter.com/#{@pranav.twitter_url}"%>' target='_blank'><%=image_tag('social_media/twitter.png', class: 'img-fluid icon')%></a></span>
-        <% end %>
-        <% if @pranav.has_telephone_number? %>
-        <span class ='hidden-sm-down'><a href='<%="tel:#{@pranav.telephone_number}"%>'><%=image_tag('social_media/phone.png', class: 'img-fluid icon')%></a></span>
-        <% end %>
-        <% if @pranav.has_email_address? %>
-          <span class ='hidden-sm-down'><a href='<%="mailto:#{@pranav.email_address}?Subject=Kathak%20lessons"%>'><%=image_tag('social_media/email.png', class: 'img-fluid icon')%></a></span>
-        <% end %>
-      </div>
+      <%= render 'layouts/footer', pranav: @pranav %>
 
     </div>
+
   </body>
+  
 </html>

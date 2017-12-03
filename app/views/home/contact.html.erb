@@ -6,47 +6,31 @@
   <div class='col-sm-5 contacts'>
 
     <% if @pranav.has_email_address? %>
-      <a href='<%="mailto:#{@pranav.email_address}?Subject=Kathak%20lessons"%>'>
-        <p class='d-flex justify-content-start'>
-          <span><%=image_tag('social_media/email_2.png', class: 'img-fluid contact')%></span>
-          <span class='contact_text'>
-            <%= @pranav.email_address %>
-          </span>
-        </p>
-      </a>
+      <%= render 'pranavs/contact_details',
+        link: @pranav.email_link,
+        image: 'social_media/email_2',
+        contact: @pranav.email_address %>
     <% end %>
 
     <% if @pranav.has_telephone_number? %>
-      <a href='<%="tel:#{@pranav.telephone_number}"%>'>
-        <p class='d-flex justify-content-start'>
-          <span><%=image_tag('social_media/phone_2.png', class: 'img-fluid contact')%></span>
-          <span class='contact_text'>
-            <%= @pranav.telephone_number %>
-          </span>
-        </p>
-      </a>
+      <%= render 'pranavs/contact_details',
+        link: @pranav.telephone_link,
+        image: 'social_media/telephone_2',
+        contact: @pranav.telephone_number %>
     <% end %>
 
     <% if @pranav.has_twitter_url? %>
-      <a href='<%="https://www.twitter.com/#{@pranav.twitter_url}"%>' target='_blank'>
-        <p class='d-flex justify-content-start'>
-          <span><%=image_tag('social_media/twitter_2.png', class: 'img-fluid contact')%></span>
-          <span class='contact_text'>
-            <%= @pranav.twitter_url %>
-          </span>
-        </p>
-      </a>
+      <%= render 'pranavs/contact_details',
+        link: @pranav.twitter_link,
+        image: 'social_media/twitter_2',
+        contact: @pranav.twitter_url %>
     <% end %>
 
     <% if @pranav.has_facebook_url? %>
-      <a href='<%="https://www.facebook.com/#{@pranav.facebook_url}"%>' target='_blank'>
-        <p class='d-flex justify-content-start'>
-          <span><%=image_tag('social_media/facebook_2.png', class: 'img-fluid contact')%></span>
-          <span class='contact_text'>
-            <%= @pranav.facebook_url %>
-          </span>
-        </p>
-      </a>
+      <%= render 'pranavs/contact_details',
+        link: @pranav.facebook_link,
+        image: 'social_media/facebook_2',
+        contact: @pranav.facebook_url %>
     <% end %>
 
   </div>
