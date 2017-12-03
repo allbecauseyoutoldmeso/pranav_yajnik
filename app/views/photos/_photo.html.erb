@@ -3,11 +3,11 @@
   <div class='gallery_frame' >
 
     <div class='row'>
-      <div class='col-sm-2'></div>
-      <div class='col-sm-8'>
+      <div class='col-sm-3'></div>
+      <div class='col-sm-6'>
         <%= link_to image_tag(photo.international_url, :class => 'gallery_image'), photo.international_url, target: '_blank' %>
       </div>
-      <div class='col-sm-2'></div>
+      <div class='col-sm-3'></div>
     </div>
 
     <% if admin_signed_in? %>
@@ -16,7 +16,7 @@
 
       <div class='row'>
 
-        <div class='col-sm-2'></div>
+        <div class='col-sm-3'></div>
 
         <div class='col-sm-2'>
           <%= button_to 'delete', "/photos/#{photo.id}", method: :delete, class: 'admin_button gallery_delete_button' %>
@@ -31,7 +31,7 @@
       <br>
 
       <div class='row'>
-        <div class='col-sm-2'></div>
+        <div class='col-sm-3'></div>
         <div class='col-sm-4'>Make this the photo for:</div>
       </div>
 
@@ -39,9 +39,9 @@
 
       <div class='row'>
 
-        <div class='col-sm-2'></div>
+        <div class='col-sm-3'></div>
 
-        <div class='col-sm-8'>
+        <div class='col-sm-6'>
 
           <div class='d-flex justify-content-between'>
 
