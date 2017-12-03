@@ -1,1 +1,6 @@
-# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-Agent: *
+Disallow: /admins/sign_in
+Disallow: /videos/*
+Disallow: /photos/*
+Disallow: /pranavs/*
+Disallow: /lessons/*
