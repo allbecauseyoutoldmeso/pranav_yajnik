@@ -17,7 +17,7 @@ RSpec.describe 'gallery page' do
     end
 
     it 'shows videos' do
-      expect(page).to have_css('iframe.gallery_video')
+      expect(page).to have_css('div.gallery_video')
     end
   end
 
