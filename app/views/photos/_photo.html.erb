@@ -1,11 +1,11 @@
-<div id='photo_<%= item.id %>_frame'>
+<div id='photo_<%= photo.id %>_frame'>
 
   <div class='gallery_frame' >
 
     <div class='row'>
       <div class='col-sm-2'></div>
       <div class='col-sm-8'>
-        <%= link_to image_tag(item.international_url, :class => 'gallery_image'), item.international_url, target: '_blank' %>
+        <%= link_to image_tag(photo.international_url, :class => 'gallery_image'), photo.international_url, target: '_blank' %>
       </div>
       <div class='col-sm-2'></div>
     </div>
@@ -19,11 +19,11 @@
         <div class='col-sm-2'></div>
 
         <div class='col-sm-2'>
-          <%= button_to 'delete', "/photos/#{item.id}", method: :delete, class: 'admin_button gallery_delete_button' %>
+          <%= button_to 'delete', "/photos/#{photo.id}", method: :delete, class: 'admin_button gallery_delete_button' %>
         </div>
 
         <div class='col-sm-2'>
-          <%= button_to 'hide', "/photos/#{item.id}", method: :patch, params: {photo: {hidden: item.shown}}, class: hide_photo_button_class(item), remote: true %>
+          <%= button_to 'hide', "/photos/#{photo.id}", method: :patch, params: {photo: {hidden: photo.shown}}, class: hide_photo_button_class(photo), remote: true %>
         </div>
 
       </div>
@@ -46,7 +46,7 @@
           <div class='d-flex justify-content-between'>
 
             <% @photo_placers.each do |photo_placer| %>
-              <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: item.id}, :class => photo_placer_button_class(photo_placer, item) %>
+              <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: photo.id}, :class => photo_placer_button_class(photo_placer, photo) %>
             <% end %>
 
           </div>
