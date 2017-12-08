@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def photo_url(place)
-    PhotoPlacer.find_by(place: place).photo.international_url
+    PhotoPlacer.find_by(place: place).photo.international_url(:large)
   end
 
   def get_photo_placers
