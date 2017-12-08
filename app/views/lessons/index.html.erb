@@ -2,9 +2,13 @@
   <title>Lessons</title>
 </head>
 
-<div >
-  <img id='lessons_image' class='mx-auto' src="<%= @photo_url %>" alt='Pranav'>
-</div>
+<% cache_unless admin_signed_in? do %>
+
+  <div >
+    <img id='lessons_image' class='mx-auto' src="<%= @photo_url %>" alt='Pranav'>
+  </div>
+
+<% end %>
 
 <% @lessons.each do |lesson| %>
   <%= render 'lesson_details', lesson: lesson %>

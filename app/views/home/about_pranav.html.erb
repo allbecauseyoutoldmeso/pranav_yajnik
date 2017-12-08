@@ -4,9 +4,13 @@
 
 <div class='row'>
 
-  <div class='col-sm-4'>
-    <img id='about_pranav_image' src="<%= @photo_url %>" alt='Pranav'>
-  </div>
+  <% cache_unless admin_signed_in? do %>
+
+    <div class='col-sm-4'>
+      <img id='about_pranav_image' src="<%= @photo_url %>" alt='Pranav'>
+    </div>
+
+  <% end %>
 
   <div class='col-sm-1'>
   </div>

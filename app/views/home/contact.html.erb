@@ -39,9 +39,13 @@
 
   </div>
 
-  <div class='col-sm-5 hidden-sm-down'>
-    <img id='contact_image' src="<%= @photo_url %>" alt='Pranav dancing'>
-  </div>
+  <% cache_unless admin_signed_in? do %>
+
+    <div class='col-sm-5 hidden-sm-down'>
+      <img id='contact_image' src="<%= @photo_url %>" alt='Pranav dancing'>
+    </div>
+
+  <% end %>
 
   <div class='col-sm-1'>
   </div>
