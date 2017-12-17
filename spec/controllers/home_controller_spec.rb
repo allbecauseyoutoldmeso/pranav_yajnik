@@ -23,11 +23,11 @@ RSpec.describe HomeController, type: :controller do
     end
 
     it 'assigns home image url' do
-      expect(assigns(:photo_url)).to eq home_photo.international_url
+      expect(assigns(:photo_url)).to eq home_photo.international_url(:large)
     end
 
     it 'assigns mobile home image url' do
-      expect(assigns(:mobile_photo_url)).to eq mobile_home_photo.international_url
+      expect(assigns(:mobile_photo_url)).to eq mobile_home_photo.international_url(:large)
     end
   end
 
@@ -44,7 +44,7 @@ RSpec.describe HomeController, type: :controller do
     end
 
     it 'assigns about pranav image url' do
-      expect(assigns(:photo_url)).to eq photo.international_url
+      expect(assigns(:photo_url)).to eq photo.international_url(:large)
     end
   end
 
@@ -80,7 +80,7 @@ RSpec.describe HomeController, type: :controller do
 
     it 'assigns contact image url' do
       get :contact
-      expect(assigns(:photo_url)).to eq photo.international_url
+      expect(assigns(:photo_url)).to eq photo.international_url(:large)
     end
   end
 end

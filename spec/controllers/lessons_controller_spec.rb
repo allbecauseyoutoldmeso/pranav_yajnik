@@ -14,7 +14,7 @@ RSpec.describe LessonsController, type: :controller do
     end
 
     it 'assigns lesson image url' do
-      expect(assigns(:photo_url)).to eq photo.international_url
+      expect(assigns(:photo_url)).to eq photo.international_url(:large)
     end
 
     it 'assigns lessons' do

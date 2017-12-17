@@ -17,6 +17,6 @@ class Photo < ActiveRecord::Base
   end
 
   def international_url(size=:original)
-    image.url(size, timestamp: false).gsub('http://s3.amazonaws.com/pranav-photos', 'https://pranav-photos.s3.eu-west-2.amazonaws.com')
+    image.url(size).gsub('http://s3.amazonaws.com/pranav-photos', 'https://pranav-photos.s3.eu-west-2.amazonaws.com')
   end
 end
