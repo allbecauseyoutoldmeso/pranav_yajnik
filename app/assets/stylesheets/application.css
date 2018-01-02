@@ -133,6 +133,10 @@ textarea:focus, input:focus{
   text-decoration-color: #F86B42
 }
 
+.class_freetext {
+  text-align: left;
+}
+
 /*contact*/
 
 .contact {
