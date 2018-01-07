@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'about pranav page' do
-  let!(:photo_placer) { create(:photo_placer, place: 'about pranav') }
+  let!(:photo) { create(:photo) }
+  let!(:photo_placer) { create(:photo_placer, place: 'about pranav', photo: photo) }
   let!(:pranav) { create(:pranav) }
 
   context 'visitor' do

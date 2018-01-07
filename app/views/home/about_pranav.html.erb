@@ -7,7 +7,7 @@
   <% cache_unless admin_signed_in? do %>
 
     <div class='col-sm-4'>
-      <img id='about_pranav_image' src="<%= @photo_url %>" alt='Pranav'>
+      <img id='about_pranav_image' src=<%= @photo.international_url(:large) %> alt=<%= @photo.caption %> >
     </div>
 
   <% end %>

@@ -1,12 +1,12 @@
 class HomeController < ApplicationController
 
   def index
-    get_photo_url('home')
-    @mobile_photo_url = photo_url('mobile home')
+    get_photo('home')
+    @mobile_photo = photo_placer_photo('mobile home')
   end
 
   def about_pranav
-    get_photo_url('about pranav')
+    get_photo('about pranav')
     @about_pranav = @pranav.about.html_safe
   end
 
@@ -16,6 +16,6 @@ class HomeController < ApplicationController
   end
 
   def contact
-   get_photo_url('contact')
+   get_photo('contact')
   end
 end

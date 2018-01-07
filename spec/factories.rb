@@ -18,6 +18,7 @@ FactoryBot.define do
 
   factory :photo do
     image { File.new("#{Rails.root}/spec/support/test_image.jpg") }
+    caption 'Pranav dancing'
   end
 
   factory :pranav do

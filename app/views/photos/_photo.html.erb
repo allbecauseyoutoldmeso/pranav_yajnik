@@ -5,7 +5,7 @@
     <div class='row'>
       <div class='col-sm-3'></div>
       <div class='col-sm-6'>
-        <%= link_to image_tag(photo.international_url(:medium), class: 'gallery_image', alt: 'Gallery image'), photo.international_url, target: '_blank' %>
+        <%= link_to image_tag(photo.international_url(:medium), class: 'gallery_image', alt: photo.caption), photo.international_url, target: '_blank' %>
       </div>
       <div class='col-sm-3'></div>
     </div>
@@ -46,7 +46,7 @@
           <div class='d-flex justify-content-between'>
 
             <% @photo_placers.each do |photo_placer| %>
-              <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: photo.id}, :class => photo_placer_button_class(photo_placer, photo) %>
+              <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: photo.id}, class: photo_placer_button_class(photo_placer, photo) %>
             <% end %>
 
           </div>

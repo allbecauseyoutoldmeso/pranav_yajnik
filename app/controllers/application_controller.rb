@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
     @pranav = Pranav.first
   end
 
-  def get_photo_url(place)
-    @photo_url = photo_url(place)
+  def get_photo(place)
+    @photo = photo_placer_photo(place)
   end
 
-  def photo_url(place)
-    PhotoPlacer.find_by(place: place).photo.international_url(:large)
+  def photo_placer_photo(place)
+    PhotoPlacer.find_by(place: place).photo
   end
 
   def get_photo_placers

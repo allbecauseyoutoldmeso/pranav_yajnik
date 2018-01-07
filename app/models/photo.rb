@@ -1,11 +1,11 @@
 class Photo < ActiveRecord::Base
 
   has_attached_file :image,
-    :styles => {
-      :thumb => '100x100',
-      :small  => '600x600',
-      :medium => '800x800',
-      :large => '1000x1000'
+    styles: {
+      thumb: '100x100',
+      small: '600x600',
+      medium: '800x800',
+      large: '1000x1000'
     }
 
   validates_attachment :image, content_type: { content_type: ['image/jpeg', 'image/gif', 'image/png'] }

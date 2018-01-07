@@ -5,7 +5,7 @@
 <% cache_unless admin_signed_in? do %>
 
   <div >
-    <img id='lessons_image' class='mx-auto' src="<%= @photo_url %>" alt='Pranav'>
+    <img id='lessons_image' class='mx-auto' src=<%= @photo.international_url(:large) %>  alt=<%= @photo.caption %> >
   </div>
 
 <% end %>

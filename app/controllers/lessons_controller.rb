@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
   before_action :authenticate_admin!, except: [:index]
 
   def index
-    get_photo_url('lessons')
+    get_photo('lessons')
     @lessons = Lesson.sorted_by_time
   end
 

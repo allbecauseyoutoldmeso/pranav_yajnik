@@ -42,7 +42,7 @@
   <% cache_unless admin_signed_in? do %>
 
     <div class='col-sm-5 hidden-sm-down'>
-      <img id='contact_image' src="<%= @photo_url %>" alt='Pranav dancing'>
+      <img id='contact_image' src=<%= @photo.international_url(:large) %>  alt=<%= @photo.caption %> >
     </div>
 
   <% end %>

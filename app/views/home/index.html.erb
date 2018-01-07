@@ -1,15 +1,15 @@
-<head>
-  <title>Pranav Yajnik | Kathak Lessons</title>
-</head>
-
 <% cache_unless admin_signed_in? do %>
-  <img class='img-fluid hidden-md-down' id='home_image' src=<%= @photo_url %> alt='Pranav dancing'>
-<% end %>
 
-<% cache_unless admin_signed_in? do %>
-  <img class='img-fluid hidden-lg-up' id='mobile_home_image' src=<%= @mobile_photo_url %> alt='Pranav dancing'>
-<% end %>
+  <head>
+    <title>Pranav Yajnik | Kathak Lessons</title>
+  </head>
 
-<style>
-  body { overflow-y: hidden }
-</style>
+  <img class='img-fluid hidden-md-down' id='home_image' src=<%= @photo.international_url(:large) %>  alt=<%= @photo.caption %> >
+
+  <img class='img-fluid hidden-lg-up' id='mobile_home_image' src=<%= @mobile_photo.international_url(:large) %> alt=<%= @mobile_photo.caption %>>
+
+  <style>
+    body { overflow-y: hidden }
+  </style>
+
+<% end %>
