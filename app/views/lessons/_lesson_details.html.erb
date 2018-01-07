@@ -14,11 +14,23 @@
     <%= lesson.when %>
   </p>
 
-  <div class='row'>
-    <div class='col-sm-2'></div>
-    <div class='col-sm-8 class_freetext'><%= lesson.freetext %></div>
-    <div class='col-sm-2'></div>
-  </div>
+  <% if lesson.has_freetext? %>
+
+    <p>
+
+      <div class='row'>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-8 class_freetext'><%= lesson.freetext %></div>
+        <div class='col-sm-2'></div>
+      </div>
+
+    </p>
+
+  <% end %>
+
+  <p>
+    <%= link_to 'Contact Pranav', '/contact', class: 'more-information' %> for more information.
+  </p>
 
   <% if admin_signed_in? %>
 

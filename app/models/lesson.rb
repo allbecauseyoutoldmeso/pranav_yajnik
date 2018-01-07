@@ -7,4 +7,8 @@ class Lesson < ActiveRecord::Base
   def when
     Date::DAYNAMES[day] + ' ' + time.strftime('%H:%M')
   end
+
+  def has_freetext?
+    freetext.present? && freetext != ''
+  end
 end

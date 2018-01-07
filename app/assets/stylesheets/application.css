@@ -137,6 +137,10 @@ textarea:focus, input:focus{
   text-align: left;
 }
 
+.more-information {
+  border-bottom: 2px solid #F86B42;
+}
+
 /*contact*/
 
 .contact {

@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'lessons page' do
-  let!(:photo_placer) { create(:photo_placer, place: 'lessons') }
+  let!(:lessons_photo_placer) { create(:photo_placer, place: 'lessons') }
+  let!(:contact_photo_placer) { create(:photo_placer, place: 'contact') }
   let!(:lesson) { create(:lesson) }
   let!(:pranav) { create(:pranav) }
 
@@ -21,6 +22,15 @@ RSpec.describe 'lessons page' do
 
     it 'shows where' do
       expect(page).to have_content lesson.when
+    end
+
+    it 'shows free text' do
+      expect(page).to have_content lesson.freetext
+    end
+
+    it 'has link to contacts page' do
+      click_link 'Contact Pranav'
+      expect(page).to have_content pranav.email_address
     end
 
     it 'shows lessons image' do
