@@ -1,13 +1,17 @@
-<head>
-  <title>Gallery</title>
-</head>
+<% cache_unless admin_signed_in? do %>
 
-<% @gallery_items.each do |item| %>
+  <head>
+    <title>Gallery</title>
+  </head>
 
-  <% if visible_photo(item) %>
-    <%= render 'photos/photo', photo: item %>
-  <% elsif video(item) %>
-    <%= render 'videos/video', video: item %>
+  <% @gallery_items.each do |item| %>
+
+    <% if visible_photo(item) %>
+      <%= render 'photos/photo', photo: item %>
+    <% elsif video(item) %>
+      <%= render 'videos/video', video: item %>
+    <% end %>
+
   <% end %>
 
 <% end %>

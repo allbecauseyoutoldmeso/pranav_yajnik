@@ -8,6 +8,7 @@ FactoryBot.define do
     time '18:00'.to_time
     what 'Beginners'
     where '123 Pranav Street, London, AB1 2CD'
+    freetext 'Kathak lessons for beginners'
   end
 
   factory :photo_placer do
