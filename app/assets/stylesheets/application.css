@@ -129,8 +129,7 @@ textarea:focus, input:focus{
 
 .class_level {
   font-size: 25px;
-  text-decoration: underline;
-  text-decoration-color: #F86B42
+  border-bottom: 2px solid #F86B42;
 }
 
 .class_freetext {
