@@ -1,13 +1,13 @@
-<head>
-  <title>Pranav Yajnik | Kathak Lessons</title>
-</head>
-
 <% cache_unless admin_signed_in? do %>
+
+  <head>
+    <title>Pranav Yajnik | Kathak Lessons</title>
+  </head>
+
   <img class='img-fluid hidden-md-down' id='home_image' src=<%= @photo_url %> alt='Pranav dancing'>
-<% end %>
 
-<% cache_unless admin_signed_in? do %>
   <img class='img-fluid hidden-lg-up' id='mobile_home_image' src=<%= @mobile_photo_url %> alt='Pranav dancing'>
+
 <% end %>
 
 <style>
