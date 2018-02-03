@@ -30,12 +30,12 @@
 
     <div class='form-group'>
       <%= f.label :start_time, 'start time' %>
-      <%= time_select 'lesson', 'start_time', {minute_step: 15} %>
+      <%= time_select :lesson, :start_time, {minute_step: 15} %>
     </div>
 
     <div class='form-group'>
       <%= f.label :end_time, 'end time' %>
-      <%= time_select 'lesson', 'end_time', {minute_step: 15} %>
+      <%= time_select :lesson, :end_time, {minute_step: 15} %>
     </div>
 
     <div class='form-group'>
