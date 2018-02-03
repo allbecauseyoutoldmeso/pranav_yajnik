@@ -96,8 +96,8 @@ RSpec.describe PhotosController, type: :controller do
       expect { post :update, params: hidden_params }.to change { photo.reload.hidden }.from(false).to(true)
     end
 
-    it 'updates hidden status' do
-      expect { post :update, params: caption_params }.to change { photo.reload.caption }.from('old caption').to('new_caption')
+    it 'updates caption' do
+      expect { post :update, params: caption_params }.to change { photo.reload.caption }.from('old caption').to('new caption')
     end
   end
 end

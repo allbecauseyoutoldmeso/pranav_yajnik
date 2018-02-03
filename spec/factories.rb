@@ -17,7 +17,9 @@ FactoryBot.define do
   end
 
   factory :photo do
-    image { File.new("#{Rails.root}/spec/support/test_image.jpg") }
+    image_file_name { 'test.jpg' }
+    image_content_type { 'image/jpeg' }
+    image_file_size { 256 }
   end
 
   factory :pranav do
