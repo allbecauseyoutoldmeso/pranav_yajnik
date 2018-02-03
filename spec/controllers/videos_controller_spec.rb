@@ -44,4 +44,23 @@ RSpec.describe VideosController, type: :controller do
       expect(response).to redirect_to '/gallery'
     end
   end
+
+  describe 'update' do
+    let(:video) { create(:video, caption: 'old caption') }
+
+    let(:caption_params) do
+      {
+        format: 'js',
+        id: video.id,
+        video:
+        {
+          caption: 'new caption'
+        }
+      }
+    end
+
+    it 'updates hidden status' do
+      expect { post :update, params: caption_params }.to change { video.reload.caption }.from('old caption').to('new caption')
+    end
+  end
 end

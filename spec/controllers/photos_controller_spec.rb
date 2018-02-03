@@ -68,10 +68,11 @@ RSpec.describe PhotosController, type: :controller do
   end
 
   describe 'update' do
-    let(:photo) { create(:photo, hidden: false) }
-    let(:params) do
+    let(:photo) { create(:photo, hidden: false, caption: 'old caption') }
+
+    let(:hidden_params) do
       {
-        format: 'js', 
+        format: 'js',
         id: photo.id,
         photo:
         {
@@ -80,8 +81,23 @@ RSpec.describe PhotosController, type: :controller do
       }
     end
 
-    it 'updates the photo' do
-      expect { post :update, params: params }.to change { photo.reload.hidden }.from(false).to(true)
+    let(:caption_params) do
+      {
+        format: 'js',
+        id: photo.id,
+        photo:
+        {
+          caption: 'new caption'
+        }
+      }
+    end
+
+    it 'updates hidden status' do
+      expect { post :update, params: hidden_params }.to change { photo.reload.hidden }.from(false).to(true)
+    end
+
+    it 'updates hidden status' do
+      expect { post :update, params: caption_params }.to change { photo.reload.caption }.from('old caption').to('new_caption')
     end
   end
 end
