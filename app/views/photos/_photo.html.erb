@@ -10,6 +10,39 @@
       <div class='col-sm-3'></div>
     </div>
 
+    <br>
+
+    <div class='row'>
+      <div class='col-sm-3'></div>
+      <div class='col-sm-6 text-center'>
+
+        <% if admin_signed_in? %>
+
+          <%= form_for photo, remote: true do |f| %>
+
+            <div class='form-group'>
+              <%= f.label :caption, 'caption' %>
+              <%= f.text_field :caption %>
+            </div>
+
+            <%= f.submit 'save', class: 'admin_button' %>
+          <% end %>
+
+        <% else %>
+
+          <%= photo.caption %>
+
+        <% end %>
+      </div>
+
+
+
+
+
+
+      <div class='col-sm-3'></div>
+    </div>
+
     <% if admin_signed_in? %>
 
       <br>

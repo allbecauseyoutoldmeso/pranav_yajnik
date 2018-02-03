@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.update(photo_params)
     get_photo_placers
-    render :photo_frame 
+    render :photo_frame
   end
 
   def destroy
