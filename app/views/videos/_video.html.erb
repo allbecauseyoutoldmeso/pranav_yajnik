@@ -1,39 +1,58 @@
-<div class='gallery_frame'>
+<div id='video_<%= video.id %>_frame'>
 
-  <div class='row'>
-    <div class='col-sm-3'></div>
-    <div class='col-sm-6'>
-      <div class='embed-responsive embed-responsive-16by9  gallery_video'>
-        <iframe class='embed-responsive-item' src='https://www.youtube.com/embed/<%=video.you_tube_id%>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' allowfullscreen></iframe>
+  <div class='gallery_frame'>
+
+    <div class='row'>
+      <div class='col-sm-3'></div>
+      <div class='col-sm-6'>
+        <div class='embed-responsive embed-responsive-16by9  gallery_video'>
+          <iframe class='embed-responsive-item' src='https://www.youtube.com/embed/<%=video.you_tube_id%>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' allowfullscreen></iframe>
+        </div>
       </div>
+      <div class='col-sm-3'></div>
     </div>
-    <div class='col-sm-3'></div>
-  </div>
-
-  <br>
-
-  <div class='row'>
-    <div class='col-sm-3'></div>
-    <div class='col-sm-6 text-center'>
-      <%= video.caption %>
-    </div>
-    <div class='col-sm-3'></div>
-  </div>
-
-  <% if admin_signed_in? %>
 
     <br>
 
     <div class='row'>
-
       <div class='col-sm-3'></div>
-
-      <div class='col-sm-2'>
-        <%= button_to 'delete', "/videos/#{video.id}", method: :delete, :class => 'admin_button gallery_delete_button' %>
+      <div class='col-sm-6 text-center'>
+        <%= video.caption %>
       </div>
-
+      <div class='col-sm-3'></div>
     </div>
 
-  <% end %>
+    <% if admin_signed_in? %>
 
+    <br>
+
+      <div class='row'>
+        <div class='col-sm-3'></div>
+        <div class='col-sm-6'>
+
+          <%= form_for video, remote: true do |f| %>
+          <%= f.text_field :caption, class: 'form-control' %>
+          <br>
+          <%= f.submit 'update caption', class: 'admin_button' %>
+          <% end %>
+
+        </div>
+        <div class='col-sm-3'></div>
+      </div>
+
+      <br>
+
+      <div class='row'>
+
+        <div class='col-sm-3'></div>
+
+        <div class='col-sm-2'>
+          <%= button_to 'delete', "/videos/#{video.id}", method: :delete, :class => 'admin_button gallery_delete_button' %>
+        </div>
+
+      </div>
+
+    <% end %>
+
+  </div>
 </div>

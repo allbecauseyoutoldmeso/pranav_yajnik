@@ -16,24 +16,29 @@
       <div class='col-sm-3'></div>
       <div class='col-sm-6 text-center'>
 
-        <% if admin_signed_in? %>
-
-          <%= form_for photo, remote: true do |f| %>
-            <%= f.text_field :caption, class: 'form-control' %>
-            <br>
-            <%= f.submit 'update caption', class: 'admin_button' %>
-          <% end %>
-
-        <% else %>
-
           <%= photo.caption %>
 
-        <% end %>
       </div>
       <div class='col-sm-3'></div>
     </div>
 
     <% if admin_signed_in? %>
+
+      <br>
+
+      <div class='row'>
+        <div class='col-sm-3'></div>
+        <div class='col-sm-6'>
+
+            <%= form_for photo, remote: true do |f| %>
+              <%= f.text_field :caption, class: 'form-control' %>
+              <br>
+              <%= f.submit 'update caption', class: 'admin_button' %>
+            <% end %>
+
+        </div>
+        <div class='col-sm-3'></div>
+      </div>
 
       <br>
 

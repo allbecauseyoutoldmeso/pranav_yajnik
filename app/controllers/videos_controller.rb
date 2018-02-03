@@ -15,6 +15,13 @@ class VideosController < ApplicationController
     end
   end
 
+  def update
+    @video = Video.find(params[:id])
+    @video.update(video_params)
+    get_photo_placers
+    render :video_frame
+  end
+
   def destroy
     video = Video.find(params[:id])
     video.destroy
