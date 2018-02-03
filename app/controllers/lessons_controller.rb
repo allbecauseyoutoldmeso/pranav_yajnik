@@ -39,6 +39,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:what, :day, :time, :where, :freetext)
+    params.require(:lesson).permit(:what, :day, :start_time, :end_time, :where, :freetext, :start_date, :end_date)
   end
 end

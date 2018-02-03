@@ -62,8 +62,8 @@ RSpec.describe 'lessons page' do
       fill_in 'what', with: 'Intermediate'
       fill_in 'where', with: '123 Pranav Street, London, AB1 2CD'
       select('Monday', from: 'day')
-      select('18', from: 'lesson_time_4i')
-      select('00', from: 'lesson_time_5i')
+      select('18', from: 'lesson_start_time_4i')
+      select('00', from: 'lesson_start_time_5i')
       click_button 'save'
       expect(page).to have_content 'Intermediate'
     end

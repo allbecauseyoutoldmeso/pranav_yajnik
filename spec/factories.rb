@@ -5,7 +5,7 @@ FactoryBot.define do
 
   factory :lesson do
     day 1
-    time '18:00'.to_time
+    start_time '18:00'.to_time
     what 'Beginners'
     where '123 Pranav Street, London, AB1 2CD'
     freetext 'Kathak lessons for beginners'
