@@ -19,13 +19,9 @@
         <% if admin_signed_in? %>
 
           <%= form_for photo, remote: true do |f| %>
-
-            <div class='form-group'>
-              <%= f.label :caption, 'caption' %>
-              <%= f.text_field :caption %>
-            </div>
-
-            <%= f.submit 'save', class: 'admin_button' %>
+            <%= f.text_field :caption, class: 'form-control' %>
+            <br>
+            <%= f.submit 'update caption', class: 'admin_button' %>
           <% end %>
 
         <% else %>
@@ -34,12 +30,6 @@
 
         <% end %>
       </div>
-
-
-
-
-
-
       <div class='col-sm-3'></div>
     </div>
 
@@ -79,7 +69,7 @@
           <div class='d-flex justify-content-between'>
 
             <% @photo_placers.each do |photo_placer| %>
-              <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: photo.id}, :class => photo_placer_button_class(photo_placer, photo) %>
+              <%= button_to photo_placer.place, "/photo_placers/#{photo_placer.id}", method: :patch, params: {photo_id: photo.id}, class: photo_placer_button_class(photo_placer, photo), remote: true %>
             <% end %>
 
           </div>
