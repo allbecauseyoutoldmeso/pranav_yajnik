@@ -136,6 +136,13 @@ textarea:focus, input:focus{
   text-align: left;
 }
 
+.contact_pranav {
+  color: #F86B42;
+}
+
+.contact_pranav:hover {
+  color: white;
+}
 /*contact*/
 
 .contact {
