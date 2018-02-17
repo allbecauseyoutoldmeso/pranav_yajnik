@@ -13,21 +13,27 @@
 
   <p>
     When:
-    <%= lesson.when %>
+    <% if admin_signed_in? && lesson.end_time.present? %>
+      <%= lesson.full_when %>
+    <% else %>
+      <%= lesson.when %>
+    <% end %>
   </p>
 
   <% if lesson.has_freetext? %>
-
     <p>
-
       <div class='row'>
         <div class='col-sm-2'></div>
         <div class='col-sm-8 class_freetext'><%= lesson.freetext %></div>
         <div class='col-sm-2'></div>
       </div>
-
     </p>
+  <% end %>
 
+  <% if admin_signed_in? && lesson.run_time.present?  %>
+      <p>
+        <%= lesson.run_time %>
+      </p>
   <% end %>
 
   <p>

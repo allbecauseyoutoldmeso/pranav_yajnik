@@ -20,6 +20,22 @@ RSpec.describe Lesson, type: :model do
     end
   end
 
+  describe 'full_when' do
+    let(:lesson) { create(:lesson, day: 1, start_time: '19:00'.to_time, end_time: '20:00'.to_time) }
+
+    it 'returns a formatted string' do
+      expect(lesson.full_when).to eq 'Monday 19:00 - 20:00'
+    end
+  end
+
+  describe 'run_time' do
+    let(:lesson) { create(:lesson, start_date: '1 Jan 2018'.to_date, end_date: '1 Mar 2018'.to_date) }
+
+    it 'returns a formatted string' do
+      expect(lesson.run_time).to eq 'From 1 Jan 2018 until 1 Mar 2018.'
+    end
+  end
+
   describe 'has_freetext?' do
     let(:lesson_with_freetext) { create(:lesson) }
     let(:lesson_with_invalid_freetext) { create(:lesson, freetext: '') }
